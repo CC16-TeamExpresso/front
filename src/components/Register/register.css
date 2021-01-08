@@ -1,0 +1,51 @@
+.register {
+  background-color: #1E0045;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #C33BD6;
+  font-family: 'Harlow Solid Italic', sans-serif;
+}
+
+.register-fields {
+    color:#C33BD6;
+
+
+}
+.email-label {
+  display:flex;
+
+
+}
+.password-label {
+  display:flex;
+}
+
+  .email-field {
+    font-size: 100%;
+    border-radius: 5px;
+    color: #61dafb;
+
+    border: 5px solid #C33BD6;
+    background-color: #1E0045;
+
+  }
+  .password-field {
+    font-size: 100%;
+    border-radius: 5px;
+    color: #61dafb;
+    border: 5px solid #C33BD6;
+    background-color: #1E0045;
+  }
+  .register-button {
+    font-size: 50px;
+    display:block;
+    color: #61dafb;
+    border: 3px solid #C33BD6;
+    text-align: center;
+    font-family: 'Harlow Solid Italic', sans-serif;
+    background-color: #1E0045;
+  }

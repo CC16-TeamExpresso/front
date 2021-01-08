@@ -1,0 +1,171 @@
+@import url('http://fonts.cdnfonts.com/css/harlow-solid-italic');
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App {
+  background-color: #1E0045;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #C33BD6;
+  font-family: 'Harlow Solid Italic', sans-serif;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* .title {
+    font-size: 50px;
+    text-align: center;
+    -webkit-animation: title 3s ease-in-out infinite alternate;
+    -moz-animation: title 3s ease-in-out infinite alternate;
+    animation: title 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes title {
+    0%{
+      color: rgb(90, 73, 99);
+       
+    }
+    
+    100% {
+      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+    }
+} */
+
+
+
+.password {
+  color:#23FBED;
+  /* text-align: center;
+  -webkit-animation: password 1s ease-in-out infinite alternate;
+  -moz-animation: password 1s ease-in-out infinite alternate;
+  animation: password 1s ease-in-out infinite alternate;
+}
+@keyframes password {
+  0%{
+    color: rgb(89, 118, 121);
+     
+  }
+  
+  100% {
+    text-shadow: 0 0 5px #23FBED, 0 0 10px #23FBED;
+  } */
+}
+
+
+.loginButton {
+  border-color: #C33BD6;
+
+  background-color: #1E0045;
+  color:#34DE04;
+}
+:root {
+--white:#f1f1f1
+}
+/* flickering title */
+.title {
+  font-family: 'Harlow Solid Italic', sans-serif;
+font-size:70px;
+color: var(--white);
+
+  background-color: #1E0045;
+  color:#C33BD6;
+
+justify-content: center;
+align-items: center;
+
+}
+.title {
+opacity: 1;
+animation: flicker 5s linear  reverse infinite;
+}
+.title::after {
+content: '';
+width: 150%;
+-webkit-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+-moz-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+}
+
+
+
+
+
+@keyframes flicker {
+0% {
+  opacity: 0.4;
+}
+5% {
+  opacity: 0.5;
+}
+10% {
+  opacity: 0.6;
+}
+15% {
+  opacity: 0.85;
+}
+25% {
+  opacity: 0.5;
+}
+30% {
+  opacity: 1;
+}
+35% {
+  opacity: 0.1;
+}
+40% {
+  opacity: 0.25;
+}
+45% {
+  opacity: 0.5;
+}
+60% {
+  opacity: 1;
+}
+70% {
+  opacity: 0.85;
+}
+80% {
+  opacity: 0.4;
+}
+90% {
+  opacity: 0.5;
+}
+100% {
+  opacity: 1;
+}
+}
+
+
+
+.registerButton {
+  border-color: #C33BD6;
+font-family: "Harlow Solid";
+height:30px;
+align-content: right;
+  background-color: #1E0045;
+  color:#23FBED; 
+  align-content: right;
+}

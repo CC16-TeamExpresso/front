@@ -1,0 +1,21 @@
+.login-button {
+    font-size: 50px;
+    border: 3px solid #C33BD6;
+    color: #34DE04;
+    display:block;
+    text-align: center;
+  }
+
+  .register-button {
+    font-size: 50px;
+    display:block;
+    color: #61dafb;
+    border: 3px solid #C33BD6;
+    text-align: center;
+
+  }
+
+  .logo {
+      display:relative;
+      width: 200px;
+  }
