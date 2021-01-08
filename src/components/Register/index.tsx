@@ -15,35 +15,6 @@ export default function Register() {
 	
 	}
 
-	// return (
-	// 	<div className="Login">
-	// 		<div className="title">Peekify</div>
-	// 		<label className="password">
-	// 			Email
-	// 			<br />
-	// 			<input
-	// 				type="text"
-	// 				className="email-field"
-	// 				placeholder="you@email.com"
-	// 				value={email}
-	// 				onChange={(e: any) => setEmail(e.target.value)}
-	// 			></input>
-	// 		</label>
-	// 		<label className="password">
-	// 			Password
-	// 			<br />
-	// 			<input
-	// 				type="text"
-	// 				className="password-field"
-	// 				value={password}
-	// 				onChange={(e: any) => setPassword(e.target.value)}
-	// 				placeholder="p@$$w0rd"
-	// 			></input>
-	// 		</label>
-	// 		<br />
-	// 		<Button variant="contained" onClick={registerUser}>
-	// 			Register
-	// 		</Button>
 
 	return (
 		<div className="Login">
