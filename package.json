@@ -58,5 +58,9 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/CC16-TeamExpresso/front.git",
+  "author": "Francis <gan_fu_rui@hotmail.com>",
+  "license": "MIT"
 }

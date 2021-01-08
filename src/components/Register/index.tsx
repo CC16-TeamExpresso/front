@@ -12,7 +12,7 @@ export default function Register() {
 
 	async function registerUser() {
 		const res = await apiCall('/api/register', { email, password });
-		console.log(res);
+	
 	}
 
 	// return (
@@ -64,11 +64,11 @@ export default function Register() {
 				Password
 				<br />
 				<input
-					type="text"
+					type="password"
 					className="password-field"
 					value={password}
 					onChange={(e: any) => setPassword(e.target.value)}
-					placeholder="p@$$w0rd"
+					placeholder="password"
 				></input>
 			</label>
 			<br />
