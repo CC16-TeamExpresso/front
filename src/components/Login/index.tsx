@@ -13,12 +13,12 @@ export default function Register() {
 	const history = useHistory();
 
 	async function loginUser() {
-		const res = await apiCall('/api/login', { email, password });
+		const res = await apiCall('/login', { email, password });
 
 		if (res.status === 'ok') {
 			localStorage.setItem('token', res.data);
 			alert('You are logged in');
-			history.push('/profile');
+			history.push('/feed');
 		} else {
 			alert(res.error);
 		}
