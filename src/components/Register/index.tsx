@@ -11,7 +11,7 @@ export default function Register() {
 	const [password, setPassword] = useState('');
 
 	async function registerUser() {
-		const res = await apiCall('/api/register', { email, password });
+		const res = await apiCall('/register', { email, password });
 	
 	}
 
