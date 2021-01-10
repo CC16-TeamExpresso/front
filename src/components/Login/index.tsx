@@ -13,12 +13,12 @@ export default function Register() {
 	const history = useHistory();
 
 	async function loginUser() {
-		const res = await apiCall('/api/login', { email, password });
+		const res = await apiCall('/login', { email, password });
 
 		if (res.status === 'ok') {
 			localStorage.setItem('token', res.data);
 			alert('You are logged in');
-			history.push('/profile');
+			history.push('/feed');
 		} else {
 			alert(res.error);
 		}
@@ -43,11 +43,11 @@ export default function Register() {
 				Password
 				<br />
 				<input
-					type="text"
+					type="password"
 					className="password-field"
 					value={password}
 					onChange={(e: any) => setPassword(e.target.value)}
-					placeholder="p@$$w0rd"
+					placeholder="password"
 				></input>
 			</label>
 			<br />
