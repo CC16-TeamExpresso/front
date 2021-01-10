@@ -1,13 +1,29 @@
 import React, { useEffect, useState } from 'react';
 
+type Message = {
+	user: string;
+	message: string;
+	intent: 'chat';
+};
+
+function processMessage(payload: string) {
+	try {
+		return JSON.parse(payload);
+	} catch (error) {
+		return null; //unreadble data received
+	}
+}
+
 export default function Profile() {
 	const [chatMessage, setChatMessage] = useState('');
+	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
 
 	function sendMessage() {
 		if (wsRef?.readyState !== WebSocket.OPEN) {
 			return;
 		}
+		//websocket connected
 		wsRef.send(JSON.stringify({ message: chatMessage }));
 	}
 
@@ -20,6 +36,20 @@ export default function Profile() {
 			},
 			{ once: true }
 		);
+
+		ws.addEventListener('message', (event) => {
+			//getting message from the server
+			const data = event.data; //message arrives here
+			const message: null | Message = processMessage(data);
+			if (!message) return; //apending old messages so they wont be lost
+			if (message.intent === 'chat') {
+				//keeping all comments or messages
+				setChatMessages((oldMessages) => {
+					return [...oldMessages, message];
+				});
+			}
+		});
+
 		setWSRef(ws);
 		return () => {
 			ws.close();
@@ -29,7 +59,17 @@ export default function Profile() {
 	return (
 		<div>
 			<h1>testing comments</h1>
-			<input onChange={(e) => setChatMessage(e.target.value)} />
+			<div>
+				{chatMessages.map((message, index) => {
+					return (
+						<div className="message" key={index}>
+							<div className="author">{message.user}</div>
+							<div className="text">{message.message}</div>
+						</div>
+					);
+				})}
+			</div>
+			<input onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
 
 			<button onClick={sendMessage}>send</button>
 		</div>
