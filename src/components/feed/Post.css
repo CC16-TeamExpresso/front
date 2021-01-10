@@ -1,0 +1,42 @@
+.post-box {
+    display:flex;
+    height:50%;
+    border: 3px solid #61dafb;
+}
+
+.profile-name {
+    display:inline-block;
+}
+
+.post-music {
+    display:inline-block;
+}
+
+.comment-message {
+    display:block;
+    border: 3px solid #C33BD6;
+
+}
+
+.comment-author {
+    background-color:blanchedalmond;
+}
+
+.comment-text {
+    background-color:green;
+}
+
+.post-input {
+    background-color: #3c1b66;
+    color:#61dafb;
+}
+
+.post-send-button {
+    font-size: 20px;
+    border: 3px solid #C33BD6;
+    color: #34DE04;
+    background-color: #1E0045;
+    display:block;
+    text-align: center;
+    font-family: 'Harlow Solid Italic', sans-serif;
+}
