@@ -1,13 +1,19 @@
 import React, { useEffect } from 'react';
 import { useState } from "react";
-
+import axios from 'axios'
+import Post from'./Post'
 import '../App.css';
 
 function Feed() {
   const [user, setUser] = useState("");
   const [lat, setLat] = useState(35.681236);
   const [lng, setLng] = useState(139.767124);
+
+
+
   useEffect(() => {
+   
+
     const success = (pos: any) => {
       console.log("success");
       const lat = pos.coords.latitude;
@@ -38,7 +44,11 @@ function Feed() {
   },[])
   return (
     <div className="App">
-      {user}
+      <h1>{user}</h1>
+      <div className='feed' >
+        <Post />
+      </div>
+      
     </div>
   );
 }
