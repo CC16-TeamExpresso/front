@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import './Post.css'
-
+import React, { useState, useEffect } from 'react';
+import './Post.css';
 
 type Message = {
 	user: string;
@@ -17,7 +16,6 @@ function processMessage(payload: string) {
 }
 
 function Post() {
-    
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
@@ -28,11 +26,10 @@ function Post() {
 		}
 		//websocket connected
 		wsRef.send(JSON.stringify({ message: chatMessage }));
+		setChatMessage(''); //no repeated messages
 	}
 
-
-
-    useEffect(() => {
+	useEffect(() => {
 		const ws = new WebSocket('ws://localhost:1338');
 		ws.addEventListener(
 			'open',
@@ -61,28 +58,32 @@ function Post() {
 		};
 	}, []);
 
-    return (
-        <div className='post-box'>
-            <p className='profile-name'>User Name</p>
-            <p className='post-music'>Music being listened</p>
-			<input className='post-input' onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
+	return (
+		<div className="post-box">
+			<p className="profile-name">User Name</p>
+			<p className="post-music">Music being listened</p>
+			<input
+				className="post-input"
+				onChange={(e) => setChatMessage(e.target.value)}
+				value={chatMessage}
+			/>
 
-			<button className='post-send-button' onClick={sendMessage}>send</button>
-			
+			<button className="post-send-button" onClick={sendMessage}>
+				send
+			</button>
+
 			<div className="comment-message">
 				{chatMessages.map((message, index) => {
+					//index is unique identifier
 					return (
-						<div  key={index}>
+						<div key={index}>
 							<div className="comment-author">{message.user}</div>
 							<div className="comment-text">{message.message}</div>
 						</div>
 					);
 				})}
 			</div>
-
-            
-        </div>
-            
-            )
+		</div>
+	);
 }
 export default Post;
