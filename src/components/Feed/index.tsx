@@ -55,6 +55,10 @@ function Feed() {
       <div className='feed' >
         
         <Post />
+        <Post />
+
+        <Post />
+
       </div>
       
     </div>

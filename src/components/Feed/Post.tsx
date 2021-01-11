@@ -72,20 +72,20 @@ function Post() {
             <p className='post-music'>Music being listened</p>
 			<button className='comment-send-button' onClick={sendMessage}>comment</button>
 
-			<input className='post-input' onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
+			<input className='post-input' type="textarea" onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
 
 			
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className='display-comments-button'>Display Comments</button>
-					<div>
-						{showComment ? <p>				{chatMessages.map((message, index) => {
+					<div >
+						{showComment ? <p className='comment-section'>	{chatMessages.map((message, index) => {
 						return (
 							<div  key={index}>
 								<div className="comment-author">{message.user}</div>
 								<div className="comment-text">{message.message}</div>
 							</div>
 						);
-					})}</p>:<p>false</p>}
+					})}</p>:<p></p>}
 
 
 					</div>
