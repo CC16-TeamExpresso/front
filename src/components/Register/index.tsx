@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useHistory } from 'react-router-dom';
 import './register.css';
 import { apiCall } from '../../utility';
 import './register.css';
@@ -10,8 +10,18 @@ export default function Register() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
+	const history = useHistory();
+
+
 	async function registerUser() {
 		const res = await apiCall('/register', { email, password });
+
+		if (res.status ==='ok'){
+			alert("Email and Password registered successfully")
+			history.push('/login');
+		} else {
+			alert(res.error)
+		}
 	}
 
 	return (
