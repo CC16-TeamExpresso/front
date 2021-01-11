@@ -7,7 +7,7 @@ declare module '*.png';
 export default function Home() {
 	return (
 		<div className="App">
-			<img className="logo " src={logo} alt="logo"></img>
+			<img className="logo" src={logo} alt="logo"></img>
 			<header className="App-header">
 				<h1 className="title">Peekify</h1>
 				<div className="buttons">
