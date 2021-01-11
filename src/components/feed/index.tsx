@@ -3,6 +3,12 @@ import { useState } from "react";
 import axios from 'axios'
 import Post from'./Post'
 import '../App.css';
+import './Feed.css';
+import logo from '../images/logo.png';
+declare module '*.png';
+
+
+
 
 function Feed() {
   const [user, setUser] = useState("");
@@ -44,6 +50,7 @@ function Feed() {
   },[])
   return (
     <div className="App">
+      <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
       <div className='feed' >
         <Post />
