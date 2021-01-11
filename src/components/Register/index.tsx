@@ -12,9 +12,7 @@ export default function Register() {
 
 	async function registerUser() {
 		const res = await apiCall('/register', { email, password });
-	
 	}
-
 
 	return (
 		<div className="Login">
@@ -29,6 +27,10 @@ export default function Register() {
 					placeholder="you@email.com"
 					value={email}
 					onChange={(e: any) => setEmail(e.target.value)}
+					//I used "any" as a work arount for the type system
+					//define the typings for the class could be :
+					// onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+					// onkeypress: (event: React.KeyboardEvent<HTMLInputElement>) => void
 				></input>
 			</label>
 			<label className="password">

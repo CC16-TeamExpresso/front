@@ -16,11 +16,11 @@ export default function Register() {
 		const res = await apiCall('/login', { email, password });
 
 		if (res.status === 'ok') {
-			localStorage.setItem('token', res.data);
+			localStorage.setItem('token', res.data); //I might change it to "refresh token"
 			alert('You are logged in');
-			history.push('/feed');
+			history.push('/feed'); //the user is pushed to the feeed page once they are logged in
 		} else {
-			alert(res.error);
+			alert(res.error); //error property if login not successful
 		}
 	}
 

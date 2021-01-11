@@ -4,9 +4,11 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Profile from './Profile';
-import Feed from "./feed/Feed";
 import './App.css';
 import { profile } from 'console';
+
+//The exact param disables the partial matching for a route and makes sure that
+//it only returns the route if the path is an EXACT match to the current url.
 
 function App() {
 	return (
@@ -16,7 +18,6 @@ function App() {
 				<Route path="/login" component={Login} exact />
 				<Route path="/register" component={Register} exact />
 				<Route path="/profile" component={Profile} exact />
-				<Route path="/feed" component={Feed} exact/> 
 			</Switch>
 		</Router>
 	);
