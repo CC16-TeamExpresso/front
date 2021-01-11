@@ -17,7 +17,7 @@ function processMessage(payload: string) {
 }
 
 function Post() {
-    
+    const [showComment, setShowComment] = useState(false);
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
@@ -61,23 +61,34 @@ function Post() {
 		};
 	}, []);
 
+	function handleShowComments() {
+		setShowComment(!showComment)
+	}
+
+
     return (
         <div className='post-box'>
             <p className='profile-name'>User Name</p>
             <p className='post-music'>Music being listened</p>
+			<button className='comment-send-button' onClick={sendMessage}>comment</button>
+
 			<input className='post-input' onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
 
-			<button className='post-send-button' onClick={sendMessage}>send</button>
 			
-			<div className="comment-message">
-				{chatMessages.map((message, index) => {
-					return (
-						<div  key={index}>
-							<div className="comment-author">{message.user}</div>
-							<div className="comment-text">{message.message}</div>
-						</div>
-					);
-				})}
+			<div className="comment-message" onClick={handleShowComments}>
+				<button className='display-comments-button'>Display Comments</button>
+					<div>
+						{showComment ? <p>				{chatMessages.map((message, index) => {
+						return (
+							<div  key={index}>
+								<div className="comment-author">{message.user}</div>
+								<div className="comment-text">{message.message}</div>
+							</div>
+						);
+					})}</p>:<p>false</p>}
+
+
+					</div>
 			</div>
 
             

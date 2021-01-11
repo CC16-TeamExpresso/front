@@ -53,6 +53,7 @@ function Feed() {
       <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
       <div className='feed' >
+        
         <Post />
       </div>
       
