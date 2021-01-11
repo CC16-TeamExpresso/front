@@ -1,15 +1,20 @@
 .post-box {
     display:flex;
-    height:50%;
+    height:100px;
+    width: 80%;
     border: 3px solid #61dafb;
-    margin:5px;
+    margin:10%;
 }
 
 .profile-name {
+    
     display:inline-block;
+    margin: 2%;
+    border-right: 3px solid #61dafb;
 }
 
 .post-music {
+    margin:2%;
     display:inline-block;
 }
 
@@ -30,10 +35,16 @@
 .post-input {
     background-color: #3c1b66;
     color:#61dafb;
+    border-radius:5px;
+    box-sizing: border-box;
+    resize:none;
+    padding: 2px 2px;
 }
 
 .post-send-button {
     font-size: 20px;
+    height: 30px;
+    width: 100px;
     border: 3px solid #C33BD6;
     color: #34DE04;
     background-color: #1E0045;
