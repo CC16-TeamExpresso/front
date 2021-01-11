@@ -1,6 +1,6 @@
 .post-box {
     display:flex;
-    height:100px;
+    height:10%;
     width: 80%;
     border: 3px solid #61dafb;
     margin:10%;
@@ -41,14 +41,15 @@
     padding: 2px 2px;
 }
 
-.post-send-button {
+.comment-send-button {
+    margin-top:inherit;
     font-size: 20px;
     height: 30px;
     width: 100px;
     border: 3px solid #C33BD6;
     color: #34DE04;
     background-color: #1E0045;
-    display:block;
+    
     text-align: center;
     font-family: 'Harlow Solid Italic', sans-serif;
 }

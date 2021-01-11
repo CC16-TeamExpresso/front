@@ -70,9 +70,10 @@ function Post() {
         <div className='post-box'>
             <p className='profile-name'>User Name</p>
             <p className='post-music'>Music being listened</p>
+			<button className='comment-send-button' onClick={sendMessage}>comment</button>
+
 			<input className='post-input' onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
 
-			<button className='post-send-button' onClick={sendMessage}>comment</button>
 			
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className='display-comments-button'>Display Comments</button>
@@ -85,6 +86,7 @@ function Post() {
 							</div>
 						);
 					})}</p>:<p>false</p>}
+
 
 					</div>
 			</div>
