@@ -61,20 +61,8 @@ function Post() {
 		};
 	}, []);
 
-
-	function displayComments(){
-		if(showComment) {
-			<div className="comment-message">
-			{chatMessages.map((message, index) => {
-				return (
-					<div  key={index}>
-						<div className="comment-author">{message.user}</div>
-						<div className="comment-text">{message.message}</div>
-					</div>
-				);
-			})}
-		</div>
-		}
+	function handleShowComments() {
+		setShowComment(!showComment)
 	}
 
 
@@ -86,7 +74,20 @@ function Post() {
 
 			<button className='post-send-button' onClick={sendMessage}>comment</button>
 			
+			<div className="comment-message" onClick={handleShowComments}>
+				<button className='display-comments-button'>Display Comments</button>
+					<div>
+						{showComment ? <p>				{chatMessages.map((message, index) => {
+						return (
+							<div  key={index}>
+								<div className="comment-author">{message.user}</div>
+								<div className="comment-text">{message.message}</div>
+							</div>
+						);
+					})}</p>:<p>false</p>}
 
+					</div>
+			</div>
 
             
         </div>
