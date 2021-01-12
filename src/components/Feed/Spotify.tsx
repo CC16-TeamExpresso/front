@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './Spotify.css'
 function Spotify(){
     
     //obtain access token 
@@ -35,10 +35,10 @@ function Spotify(){
 
     return (
     <div>
-    <button id="button"><a href="http://localhost:8050/spotifylogin">Log in with Spotify</a></button>
-    <form><input type="text" id="enterUri" ></input></form>
-    <button id="share" onClick={sendUri}>Share</button>
-    <button id="fillUri" onClick={autoFill}>Autofill</button>
+      <button className='spotify-login'id="button"><a className='spotify-link' href="http://localhost:8050/spotifylogin">Log in with Spotify</a></button>
+        <form><input className='spotify-input' type="text" id="enterUri" ></input></form>
+      <button className='spotify-share-button'id="share" onClick={sendUri}>Share</button>
+      <button className='spotify-autofill' id="fillUri" onClick={autoFill}>Autofill</button>
     </div>
     )
 }

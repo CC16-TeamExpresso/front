@@ -4,7 +4,7 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Profile from './Profile';
-import Feed from './Feed'
+import Feed from './Feed';
 import './App.css';
 import { profile } from 'console';
 

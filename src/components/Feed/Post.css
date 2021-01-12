@@ -19,7 +19,7 @@
 }
 
 .comment-message {
-    display:block;
+    display:inline-block;
 
 }
 
@@ -40,7 +40,9 @@
 .post-input, select, textarea {
     background-color: #3c1b66;
     color:#61dafb;
-    border-radius:5px;
+    border-radius:3px;
+    height:50px;
+    width:500px;
 
 
 }

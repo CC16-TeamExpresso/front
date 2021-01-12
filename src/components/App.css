@@ -1,10 +1,25 @@
 @import url('http://fonts.cdnfonts.com/css/harlow-solid-italic');
-
+@font-face {
+  font-family:'Harlow Solid Italic';
+  src:url(../fonts/Harlow\ Solid\ Regular.ttf)
+}
+@font-face {
+  font-family:'Gotham Medium';
+  src:url(../fonts/Gotham\ Bold\ Regular.ttf)
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+.registerButton {
+  border-color: #C33BD6;
+font-family: "Harlow Solid";
+height:30px;
+align-content: right;
+  background-color: #1E0045;
+  color:#23FBED; 
+  align-content: right;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -152,12 +167,3 @@ box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
 
 
 
-.registerButton {
-  border-color: #C33BD6;
-font-family: "Harlow Solid";
-height:30px;
-align-content: right;
-  background-color: #1E0045;
-  color:#23FBED; 
-  align-content: right;
-}
