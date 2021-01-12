@@ -1,0 +1,58 @@
+.spotify-login {
+
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    background-color: #1DB954;
+    border:none;
+    border-radius:50px;
+    text-align: center;
+}
+a:link {
+    font-family: 'Gotham Medium';
+    color:white;
+    text-decoration: none;
+}
+a:visited {
+    color:white;
+
+    text-decoration: none;
+}
+
+.spotify-input {
+    margin-top:5px;
+    padding:4px;
+    align-self: center;
+    background-color: #3c1b66;
+    color:#61dafb;
+    border:none;
+    width:96%;
+
+}
+
+.spotify-share-button {
+    font-size: 20px;
+    height: 30px;
+    width: 48%;
+    border: 3px solid #C33BD6;
+    color: #34DE04;
+    background-color: #1E0045;
+    text-align: center;
+    font-family: 'Harlow Solid Italic', sans-serif;
+    margin-top:5px;
+    margin-bottom: 5px;
+    margin-right:5px;
+}
+
+.spotify-autofill {
+    font-size: 20px;
+    height: 30px;
+    width: 49%;
+    border: 3px solid #C33BD6;
+    color:#61dafb;
+    background-color: #1E0045;
+    
+    text-align: center;
+    font-family: 'Harlow Solid Italic', sans-serif;
+}
+
