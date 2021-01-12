@@ -31,7 +31,7 @@ function Post() {
 	}
 
 	useEffect(() => {
-		const ws = new WebSocket('ws://localhost:1338/' + localStorage.getItem('token'));
+		const ws = new WebSocket('ws://localhost:1338/' + localStorage.getItem('token')); //token is added as url
 		ws.addEventListener(
 			'open',
 			() => {
