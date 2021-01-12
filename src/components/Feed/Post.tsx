@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Post.css';
 
 type Message = {
@@ -21,6 +22,8 @@ function Post() {
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
 
+	const history = useHistory();
+
 	function sendMessage() {
 		if (wsRef?.readyState !== WebSocket.OPEN) {
 			return;
@@ -39,6 +42,13 @@ function Post() {
 			},
 			{ once: true }
 		);
+
+		ws.addEventListener('error', () => {
+			//handle the error if the person isnt logged or has no token
+			//you can check this by clering local storage after login and you will get this alert
+			alert('you are not logged in, log in first to comment');
+			history.replace('/login');
+		});
 
 		ws.addEventListener('message', (event) => {
 			//getting message from the server
