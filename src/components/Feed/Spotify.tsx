@@ -3,7 +3,7 @@ import './Spotify.css'
 require('dotenv').config();
 function Spotify(){
     
-   let BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8050"
+   let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
     //obtain access token 
      const access_token = window.location.search.slice(14);

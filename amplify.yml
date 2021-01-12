@@ -13,7 +13,7 @@ frontend:
     build:
       commands:
         - yarn run build
-        - echo "BACKEND_URL=$BACKEND_URL" >> .env
+        - echo "REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL" >> .env
   artifacts:
     baseDirectory: build
     files:
