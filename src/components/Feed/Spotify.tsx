@@ -28,7 +28,7 @@ function Spotify(){
       const uri = data.item.uri;      
       enterUri.value = uri      
     })
-    .catch((err)=>(console.log("No uri now.")));
+    .catch((err)=>(console.log("Not playing now.")));
   } else {
     console.log("no token")
   }}
