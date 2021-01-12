@@ -3,6 +3,7 @@
     border: 3px solid #C33BD6;
     color: #34DE04;
     display:block;
+    font-family: 'Harlow Solid Italic';
     text-align: center;
   }
 
@@ -11,6 +12,8 @@
     display:block;
     color: #61dafb;
     border: 3px solid #C33BD6;
+  font-family: 'Harlow Solid Italic', sans-serif;
+
     text-align: center;
 
   }
