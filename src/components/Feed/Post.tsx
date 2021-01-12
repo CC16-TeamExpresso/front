@@ -16,7 +16,7 @@ function processMessage(payload: string) {
 	}
 }
 
-function Post() {
+function Post(props: any) {
 	const [showComment, setShowComment] = useState(false);
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
@@ -96,21 +96,35 @@ function Post() {
 
 	return (
 		<div className="post-box">
-			<p className="profile-name">User Name</p>
-			<p className="post-music">Music being listened</p>
-
-			<textarea
-				className="post-input"
-				onChange={(e) => setChatMessage(e.target.value)}
-				value={chatMessage}
-			/>
-			<button className="comment-send-button" onClick={sendMessage}>
-				comment
-			</button>
-			<button className="like-button" onClick={increaseLikes}>
-				Like
-			</button>
-
+			<div>
+				<div className="profile-name">{props.username}</div>
+				<div className="post-music">
+					<iframe
+						src={`https://open.spotify.com/embed/${props.uri}`}
+						width="300"
+						height="80"
+						frameBorder="0"
+						allowTransparency={true}
+						allow="encrypted-media"
+					></iframe>
+				</div>
+			</div>
+			<div>
+				<textarea
+					className="post-input"
+					onChange={(e) => setChatMessage(e.target.value)}
+					value={chatMessage}
+				/>
+				<div className="button-container">
+					<button className="comment-send-button" onClick={sendMessage}>
+						comment
+					</button>
+					<button className="like-button" onClick={increaseLikes}>
+						like
+					</button>
+					<div className="likes">{commentLikes}</div>
+				</div>
+			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">Display Comments</button>
 				<div>

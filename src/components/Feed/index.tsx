@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import axios from 'axios';
 import Post from './Post';
+import { Link } from 'react-router-dom';
+
 import '../App.css';
 import './Feed.css';
 import Spotify from './Spotify';
@@ -10,22 +11,14 @@ declare module '*.png';
 
 function Feed() {
   const [user, setUser] = useState("");
-  const [lat, setLat] = useState(35.681236);
-  const [lng, setLng] = useState(139.767124);
-
-
-
+  const [feedUsers, setFeedUsers] = useState([]);
   useEffect(() => {
-   
-
     const success = (pos: any) => {
       console.log("success");
       const lat = pos.coords.latitude;
       const lng = pos.coords.longitude;
-      setLat(lat);
-      setLng(lng);
-      fetch("http://localhost:8050/api/test",{
-        method: "POST",
+      fetch("http://localhost:8050/api/usergps",{
+        method: "PATCH",
         headers: {
           'Content-Type': 'application/json',
           'token': localStorage.getItem('token') || '',
@@ -38,22 +31,38 @@ function Feed() {
       )
         .then(res => res.json())
         .then(data => {
-          setUser(data.user.email)
+          setUser(data.user);
+          return fetch("http://localhost:8050/api/user",{
+            method:"GET",
+            headers: {
+              'Content-Type': 'application/json',
+              'token': localStorage.getItem('token') || '',
+            }
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          setFeedUsers(data.result)
+          console.log(data);
         });
     }
     const fail = () => {
-      console.log("sipai");
+      alert("Please turn on GPS");
     }
     navigator.geolocation.getCurrentPosition(success, fail);
   },[])
   return (
     <div className="App">
+    		<Link className="profile-link" to="/Profile">
+						Profile
+				</Link>
       <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
       <Spotify />
       <div className='feed' >
-        <Post />
-        
+        {feedUsers.map((feedUser : any) => {
+          return <Post username={feedUser.username} uri={feedUser.post.uri}/>
+        }) }
       </div>
       
     </div>
