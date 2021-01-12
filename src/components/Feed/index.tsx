@@ -60,7 +60,7 @@ function Feed() {
       <h1>{user}</h1>
       <Spotify />
       <div className='feed' >
-        <Post />
+        <Post  />
         <Post />
         <Post />
         
