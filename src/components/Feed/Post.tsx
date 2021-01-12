@@ -16,7 +16,7 @@ function processMessage(payload: string) {
 	}
 }
 
-function Post() {
+function Post(props: any) {
 	const [showComment, setShowComment] = useState(false);
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
@@ -83,8 +83,17 @@ function Post() {
 	return (
 		<div className="post-box">
 			<div>
-				<div className="profile-name">User Name</div>
-				<div className="post-music">Music being listened</div>
+				<div className="profile-name">{props.username}</div>
+				<div className="post-music">
+					<iframe 
+					src={`https://open.spotify.com/embed/${props.uri}`}
+					width="300" height="80" 
+					frameBorder="0" 
+					allowTransparency={true}
+					allow="encrypted-media"
+					>
+					</iframe>
+					</div>
 			</div>
 			<div >
 				<textarea
