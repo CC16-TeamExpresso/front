@@ -20,6 +20,13 @@ function Post() {
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
+	const [commentLikes, setCommentLikes] = useState(0)
+
+
+	function increaseLikes() {
+		setCommentLikes(commentLikes + 1);
+	}
+
 
 	function sendMessage() {
 		if (wsRef?.readyState !== WebSocket.OPEN) {
@@ -74,8 +81,11 @@ function Post() {
 				onChange={(e) => setChatMessage(e.target.value)}
 				value={chatMessage}
 			/>
-						<button className="comment-send-button" onClick={sendMessage}>
+			<button className="comment-send-button" onClick={sendMessage}>
 				comment
+			</button>
+			<button className="like-button" onClick={increaseLikes}>
+				Like
 			</button>
 
 			<div className="comment-message" onClick={handleShowComments}>
