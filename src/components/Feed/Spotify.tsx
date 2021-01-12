@@ -14,12 +14,23 @@ function Spotify(){
         //const enterUri : any = document.getElementById("enterUri") 
         const uri = enterUri.value
         const body = {uri: uri}
-        console.log(body)
-        //fetch('http://localhost:8050/senduri', { 
-        fetch(BACKEND_URL+"/senduri", {
+        fetch(BACKEND_URL+"/api/music", {
         method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body:JSON.stringify(body)})        
+        headers: {
+          "Content-Type":"application/json",
+          "token": localStorage.getItem("token") || ""
+        },
+        body:JSON.stringify(body)})
+         .then(res => res.json())
+         .then(data => {
+           if(data.result == 1) {
+             alert("Successfullt posted!");
+             enterUri.value = "";
+           }else {
+             alert("Oops something wrong!");
+             enterUri.value = "";
+           }
+         })   
     };
     
 
