@@ -13,6 +13,7 @@
     border-radius:50px;
     text-align: center;
 }
+
 .spotify-link:link {
     font-family: 'Gotham Medium';
     color:white;
@@ -48,7 +49,23 @@
     margin-bottom: 5px;
     margin-right:5px;
 }
-
+.spotify-share-button:hover {
+    text-align: center;
+    -webkit-animation: title 1s ease-in-out infinite alternate;
+    -moz-animation: title 1s ease-in-out infinite alternate;
+    animation: title 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes title {
+    0%{
+      color: rgb(90, 73, 99);
+       
+    }
+    
+    100% {
+      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+    }
+}
 .spotify-autofill {
     font-size: 20px;
     height: 30px;
@@ -60,4 +77,20 @@
     text-align: center;
     font-family: 'Harlow Solid Italic', sans-serif;
 }
-
+.spotify-autofill:hover {
+    text-align: center;
+    -webkit-animation: title 1s ease-in-out infinite alternate;
+    -moz-animation: title 1s ease-in-out infinite alternate;
+    animation: title 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes title {
+    0%{
+      color: rgb(90, 73, 99);
+       
+    }
+    
+    100% {
+      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+    }
+}

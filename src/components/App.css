@@ -5,14 +5,41 @@
   height: 40vmin;
   pointer-events: none;
 }
-.registerButton {
-  border-color: #C33BD6;
-  font-family: "Harlow Solid Italic";
-  height:30px;
-  align-content: right;
-  background-color: #1E0045;
-  color:#23FBED; 
-  align-content: right;
+
+
+.register-button:hover {
+  text-align: center;
+  -webkit-animation: title 1s ease-in-out infinite alternate;
+  -moz-animation: title 1s ease-in-out infinite alternate;
+  animation: title 1s ease-in-out infinite alternate;
+}
+
+@keyframes title {
+  0%{
+    color: rgb(90, 73, 99);
+     
+  }
+  
+  100% {
+    text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+  }
+}
+.login-button:hover {
+  text-align: center;
+  -webkit-animation: title 1s ease-in-out infinite alternate;
+  -moz-animation: title 1s ease-in-out infinite alternate;
+  animation: title 1s ease-in-out infinite alternate;
+}
+
+@keyframes title {
+  0%{
+    color: rgb(90, 73, 99);
+     
+  }
+  
+  100% {
+    text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+  }
 }
 
 
@@ -31,25 +58,24 @@
 .App-link {
   color: #61dafb;
 }
+button:hover {
+  text-align: center;
+  -webkit-animation: title 1s ease-in-out infinite alternate;
+  -moz-animation: title 1s ease-in-out infinite alternate;
+  animation: title 1s ease-in-out infinite alternate;
+}
 
-/* .title {
-    font-size: 50px;
-    text-align: center;
-    -webkit-animation: title 3s ease-in-out infinite alternate;
-    -moz-animation: title 3s ease-in-out infinite alternate;
-    animation: title 3s ease-in-out infinite alternate;
+@keyframes title {
+  0%{
+    color: rgb(90, 73, 99);
+     
   }
   
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
-} */
+  100% {
+    text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+  }
+}
+
 
 
 
@@ -64,6 +90,8 @@
 :root {
 --white:#f1f1f1
 }
+
+
 /* flickering title */
 .title {
   font-family: 'Harlow Solid Italic', sans-serif;
