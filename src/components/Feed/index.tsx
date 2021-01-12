@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Post from './Post';
+import { Link } from 'react-router-dom';
+
 import '../App.css';
 import './Feed.css';
 import Spotify from './Spotify';
@@ -51,10 +53,15 @@ function Feed() {
   },[])
   return (
     <div className="App">
+    		<Link className="profile-link" to="/Profile">
+						Profile
+				</Link>
       <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
       <Spotify />
       <div className='feed' >
+        <Post />
+        <Post />
         <Post />
         
       </div>

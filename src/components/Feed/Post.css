@@ -1,3 +1,8 @@
+@font-face {
+    font-family:'Gotham Medium';
+    src:url(../../fonts/Gotham\ Bold\ Regular.ttf)
+  }
+
 .post-box {
     display:flex;
     height:10%;
@@ -9,13 +14,16 @@
 }
 
 .profile-name {
-    
-    margin:5px;
+    margin-left: 15px;
+    font-family:'Gotham Medium';
+    font-size:20px;
 }
 
 .post-music {
-    margin:3%;
-    display:inline-block;
+    margin-left: 5px;
+    margin-right:5px;
+    font-family:'Gotham Medium';
+    display:block;
 }
 
 .comment-message {
@@ -24,15 +32,22 @@
 }
 
 .comment-author {
+    font-family:'Arial, Helvetica, sans-serif';
     font-size:16px;
-    background-color:blanchedalmond;
+    background-color: #1E0045;
+
+    color: #34DE04;
+
     z-index: 10;
 
 }
 
 .comment-text {
+    font-family:'Arial, Helvetica, sans-serif';
+    background-color: #3c1b66;
+
+    color:#61dafb;
     font-size:12px;
-    background-color:green;
     z-index: 10;
 
 }
@@ -42,7 +57,7 @@
     color:#61dafb;
     border-radius:3px;
     height:30px;
-    width:300px;
+    width:400px;
     padding: 10px;
 
 
@@ -84,7 +99,7 @@
 .display-comments-button {
     font-size: 20px;
     height: 60px;
-    width: 100%;
+    width: 100px;
     border: 3px solid #C33BD6;
     color: #34DE04;
     background-color: #1E0045;
@@ -111,7 +126,7 @@
 }
 .comment-section {
     z-index: 10;
-    width:100%;
+    width:300px;
     border: 3px solid #34DE04;
 }
 
@@ -128,7 +143,7 @@
     overflow:hidden;
     width: 100px;
     border: 3px solid #C33BD6;
-    color: #34DE04;
+    color: #ff7d03;
     background-color: #1E0045;
     text-align: center;
     font-family: 'Harlow Solid Italic', sans-serif;
@@ -150,4 +165,17 @@
     100% {
       text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
     }
+}
+.likes {
+    display:block;
+    margin-left:5px;
+    font-size: 15px;
+    height: 24px;
+    overflow:hidden;
+    width: 100px;
+    border: 3px solid #34DE04;
+    color: #ff7d03;
+    background-color: #1E0045;
+    text-align: center;
+    font-family: 'Harlow Solid Italic', sans-serif;
 }
