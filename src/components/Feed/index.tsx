@@ -60,10 +60,9 @@ function Feed() {
       <h1>{user}</h1>
       <Spotify />
       <div className='feed' >
-        <Post />
-        <Post />
-        <Post />
-        
+        {feedUsers.map((feedUser : any) => {
+          return <Post username={feedUser.username} uri={feedUser.post.uri}/>
+        }) }
       </div>
       
     </div>
