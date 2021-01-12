@@ -21,13 +21,11 @@ function Post() {
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
-	const [commentLikes, setCommentLikes] = useState(0)
-
+	const [commentLikes, setCommentLikes] = useState(0);
 
 	function increaseLikes() {
 		setCommentLikes(commentLikes + 1);
 	}
-
 
 	const history = useHistory();
 
@@ -36,7 +34,7 @@ function Post() {
 			return;
 		}
 		//websocket connected
-		wsRef.send(JSON.stringify({ message: chatMessage }));
+		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat' }));
 		setChatMessage(''); //no repeated messages
 	}
 
@@ -50,6 +48,19 @@ function Post() {
 		// 	{ once: true }
 		// );
 
+		ws.addEventListener(
+			'open',
+			() => {
+				ws.send(
+					JSON.stringify({
+						intent: 'old-messages',
+						count: 5, //for now 5 comments
+					})
+				);
+			},
+			{ once: true }
+		); //when the user opens the comments its starts with no comments
+
 		ws.addEventListener('error', () => {
 			//handle the error if the person isnt logged or has no token
 			//you can check this by clering local storage after login and you will get this alert
@@ -60,13 +71,16 @@ function Post() {
 		ws.addEventListener('message', (event) => {
 			//getting message from the server
 			const data = event.data; //message arrives here
-			const message: null | Message = processMessage(data);
+			const message: any = processMessage(data);
 			if (!message) return; //apending old messages so they wont be lost
 			if (message.intent === 'chat') {
 				//keeping all comments or messages
 				setChatMessages((oldMessages) => {
-					return [...oldMessages, message];
+					return [...oldMessages, message as Message];
 				});
+			} else if ((message.intent = 'old-messages')) {
+				console.log(message.data, 'older comments');
+				setChatMessages(message.data);
 			}
 		});
 
@@ -85,7 +99,6 @@ function Post() {
 			<p className="profile-name">User Name</p>
 			<p className="post-music">Music being listened</p>
 
-		
 			<textarea
 				className="post-input"
 				onChange={(e) => setChatMessage(e.target.value)}
