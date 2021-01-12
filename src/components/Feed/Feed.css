@@ -2,5 +2,9 @@
     border: 5px solid #C33BD6;
     width: 90%;
     height:600px;
-    overflow: hidden;
+    overflow: auto;
+
 }
+.feed::-webkit-scrollbar {
+    display: none;
+  }
