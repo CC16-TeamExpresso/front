@@ -42,7 +42,10 @@
     color:#61dafb;
     border-radius:3px;
     height:50px;
-    width:500px;
+    width:300px;
+    padding: 10px;
+    white-space: normal;
+    word-break:break-all;
 
 
 }
@@ -55,7 +58,6 @@
     border: 3px solid #C33BD6;
     color: #34DE04;
     background-color: #1E0045;
-    
     text-align: center;
     font-family: 'Harlow Solid Italic', sans-serif;
 }
