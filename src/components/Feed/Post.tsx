@@ -82,9 +82,10 @@ function Post() {
 
 	return (
 		<div className="post-box">
-			<p className="profile-name">User Name</p>
-			<p className="post-music">Music being listened</p>
-
+			<div>
+				<div className="profile-name">User Name</div>
+				<div className="post-music">Music being listened</div>
+			</div>
 			<div >
 				<textarea
 					className="post-input"

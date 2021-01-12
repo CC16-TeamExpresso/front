@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import Post from './Post';
+import { Link } from 'react-router-dom';
+
 import '../App.css';
 import './Feed.css';
 import Spotify from './Spotify';
@@ -38,7 +40,7 @@ function Feed() {
       )
         .then(res => res.json())
         .then(data => {
-          setUser(data.user.email)
+          setUser(data.user.username)
         });
     }
     const fail = () => {
@@ -48,6 +50,9 @@ function Feed() {
   },[])
   return (
     <div className="App">
+    		<Link className="profile-link" to="/Profile">
+						Profile
+				</Link>
       <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
       <Spotify />
