@@ -1,30 +1,20 @@
 @import url('http://fonts.cdnfonts.com/css/harlow-solid-italic');
-@font-face {
-  font-family:'Harlow Solid Italic';
-  src:url(../fonts/Harlow\ Solid\ Regular.ttf)
-}
-@font-face {
-  font-family:'Gotham Medium';
-  src:url(../fonts/Gotham\ Bold\ Regular.ttf)
-}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 .registerButton {
   border-color: #C33BD6;
-font-family: "Harlow Solid";
-height:30px;
-align-content: right;
+  font-family: "Harlow Solid Italic";
+  height:30px;
+  align-content: right;
   background-color: #1E0045;
   color:#23FBED; 
   align-content: right;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 .App {
   background-color: #1E0045;
@@ -63,23 +53,6 @@ align-content: right;
 
 
 
-.password {
-  color:#23FBED;
-  /* text-align: center;
-  -webkit-animation: password 1s ease-in-out infinite alternate;
-  -moz-animation: password 1s ease-in-out infinite alternate;
-  animation: password 1s ease-in-out infinite alternate;
-}
-@keyframes password {
-  0%{
-    color: rgb(89, 118, 121);
-     
-  }
-  
-  100% {
-    text-shadow: 0 0 5px #23FBED, 0 0 10px #23FBED;
-  } */
-}
 
 
 .loginButton {
@@ -87,21 +60,21 @@ align-content: right;
 
   background-color: #1E0045;
   color:#34DE04;
-}
+} 
 :root {
 --white:#f1f1f1
 }
 /* flickering title */
 .title {
   font-family: 'Harlow Solid Italic', sans-serif;
-font-size:70px;
-color: var(--white);
+  font-size:70px;
+  color: var(--white);
 
   background-color: #1E0045;
   color:#C33BD6;
 
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
 
 }
 .title {
