@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
-import { useState } from "react";
-import axios from 'axios'
-import Post from'./Post'
+import { useState } from 'react';
+import axios from 'axios';
+import Post from './Post';
 import '../App.css';
 import './Feed.css';
 import Spotify from './Spotify';
 import logo from '../images/logo.png';
 declare module '*.png';
-
-
-
 
 function Feed() {
   const [user, setUser] = useState("");

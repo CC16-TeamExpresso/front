@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import './Post.css'
-
+import React, { useState, useEffect } from 'react';
+import './Post.css';
 
 type Message = {
 	user: string;
@@ -17,7 +16,7 @@ function processMessage(payload: string) {
 }
 
 function Post() {
-    const [showComment, setShowComment] = useState(false);
+	const [showComment, setShowComment] = useState(false);
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
@@ -28,12 +27,11 @@ function Post() {
 		}
 		//websocket connected
 		wsRef.send(JSON.stringify({ message: chatMessage }));
+		setChatMessage(''); //no repeated messages
 	}
 
-
-
-    useEffect(() => {
-		const ws = new WebSocket('ws://localhost:1338');
+	useEffect(() => {
+		const ws = new WebSocket('ws://localhost:1338/' + localStorage.getItem('token')); //token is added as url
 		ws.addEventListener(
 			'open',
 			() => {
@@ -62,38 +60,44 @@ function Post() {
 	}, []);
 
 	function handleShowComments() {
-		setShowComment(!showComment)
+		setShowComment(!showComment);
 	}
 
+	return (
+		<div className="post-box">
+			<p className="profile-name">User Name</p>
+			<p className="post-music">Music being listened</p>
+			<button className="comment-send-button" onClick={sendMessage}>
+				comment
+			</button>
 
-    return (
-        <div className='post-box'>
-            <p className='profile-name'>User Name</p>
-            <p className='post-music'>Music being listened</p>
-			<button className='comment-send-button' onClick={sendMessage}>comment</button>
+			<input
+				className="post-input"
+				onChange={(e) => setChatMessage(e.target.value)}
+				value={chatMessage}
+			/>
 
-			<input className='post-input' type="textarea" onChange={(e) => setChatMessage(e.target.value)} value={chatMessage} />
-
-			
 			<div className="comment-message" onClick={handleShowComments}>
-				<button className='display-comments-button'>Display Comments</button>
-					<div >
-						{showComment ? <p className='comment-section'>	{chatMessages.map((message, index) => {
-						return (
-							<div  key={index}>
-								<div className="comment-author">{message.user}</div>
-								<div className="comment-text">{message.message}</div>
-							</div>
-						);
-					})}</p>:<p></p>}
-
-
-					</div>
+				<button className="display-comments-button">Display Comments</button>
+				<div>
+					{showComment ? (
+						<p>
+							{' '}
+							{chatMessages.map((message, index) => {
+								return (
+									<div key={index}>
+										<div className="comment-author">{message.user}</div>
+										<div className="comment-text">{message.message}</div>
+									</div>
+								);
+							})}
+						</p>
+					) : (
+						<p>false</p>
+					)}
+				</div>
 			</div>
-
-            
-        </div>
-            
-            )
+		</div>
+	);
 }
 export default Post;
