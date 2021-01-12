@@ -7,7 +7,11 @@ import '../App.css';
 import './Feed.css';
 import Spotify from './Spotify';
 import logo from '../images/logo.png';
+require('dotenv').config();
+
 declare module '*.png';
+
+let BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8050"
 
 function Feed() {
   const [user, setUser] = useState("");
@@ -17,7 +21,9 @@ function Feed() {
       console.log("success");
       const lat = pos.coords.latitude;
       const lng = pos.coords.longitude;
-      fetch("http://localhost:8050/api/usergps",{
+
+     
+      fetch(BACKEND_URL+"/api/usergps", {
         method: "PATCH",
         headers: {
           'Content-Type': 'application/json',
@@ -32,7 +38,7 @@ function Feed() {
         .then(res => res.json())
         .then(data => {
           setUser(data.user);
-          return fetch("http://localhost:8050/api/user",{
+          return fetch(BACKEND_URL+"/api/user", {
             method:"GET",
             headers: {
               'Content-Type': 'application/json',
