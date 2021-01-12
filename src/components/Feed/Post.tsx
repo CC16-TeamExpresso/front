@@ -85,19 +85,22 @@ function Post() {
 			<p className="profile-name">User Name</p>
 			<p className="post-music">Music being listened</p>
 
-		
-			<textarea
-				className="post-input"
-				onChange={(e) => setChatMessage(e.target.value)}
-				value={chatMessage}
-			/>
-			<button className="comment-send-button" onClick={sendMessage}>
-				comment
-			</button>
-			<button className="like-button" onClick={increaseLikes}>
-				Like
-			</button>
+			<div >
+				<textarea
+					className="post-input"
+					onChange={(e) => setChatMessage(e.target.value)}
+					value={chatMessage}
+				/>
+					<div className='button-container'>
 
+					<button className="comment-send-button" onClick={sendMessage}>
+						comment
+					</button>
+					<button className="like-button" onClick={increaseLikes}>
+						like
+					</button>
+					</div>
+			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">Display Comments</button>
 				<div>
