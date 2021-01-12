@@ -1,9 +1,12 @@
 //created this simple fetch wrapper instead of axios
+require('dotenv').config();
+
 
 export const IS_DEVELOPMENT = window.location.hostname === 'localhost';
 export const IS_PRODUCTION = !IS_DEVELOPMENT;
 
-const API_URL = IS_PRODUCTION ? '' : 'http://localhost:8050'; // is there a better way to write this?
+const API_URL = process.env.BACKEND_URL ||'http://localhost:8050'
+
 
 export async function apiCall(path: string, payload: { [key: string]: any }) {
 	const res = await fetch(`${API_URL}${path}`, {
