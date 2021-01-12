@@ -4,45 +4,49 @@
     width: 80%;
     border: 3px solid #61dafb;
     margin:10%;
+    margin-top:5%;
+    margin-bottom: 5%;
 }
 
 .profile-name {
     
-    display:inline-block;
-    margin: 2%;
-    border-right: 3px solid #61dafb;
+    margin:5px;
 }
 
 .post-music {
-    margin:2%;
+    margin:3%;
     display:inline-block;
 }
 
 .comment-message {
     display:block;
-    border: 3px solid #C33BD6;
 
 }
 
 .comment-author {
+    font-size:16px;
     background-color:blanchedalmond;
+    z-index: 10;
+
 }
 
 .comment-text {
+    font-size:12px;
     background-color:green;
+    z-index: 10;
+
 }
 
-.post-input {
+.post-input, select, textarea {
     background-color: #3c1b66;
     color:#61dafb;
     border-radius:5px;
-    box-sizing: border-box;
-    resize:none;
-    padding: 2px 2px;
+
+
 }
 
 .comment-send-button {
-    margin-top:inherit;
+
     font-size: 20px;
     height: 30px;
     width: 100px;
@@ -52,4 +56,21 @@
     
     text-align: center;
     font-family: 'Harlow Solid Italic', sans-serif;
+}
+.display-comments-button {
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    border: 3px solid #C33BD6;
+    color: #34DE04;
+    background-color: #1E0045;
+    
+    text-align: center;
+    font-family: 'Harlow Solid Italic', sans-serif;
+}
+
+.comment-section {
+    z-index: 10;
+    width:100%;
+    border: 3px solid #34DE04;
 }

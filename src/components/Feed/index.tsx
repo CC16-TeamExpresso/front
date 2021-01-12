@@ -4,6 +4,7 @@ import axios from 'axios';
 import Post from './Post';
 import '../App.css';
 import './Feed.css';
+import Spotify from './Spotify';
 import logo from '../images/logo.png';
 declare module '*.png';
 
@@ -46,6 +47,7 @@ function Feed() {
 			<h1>{user}</h1>
 			<div className="feed">
 				<Post />
+				<Spotify />
 			</div>
 		</div>
 	);
