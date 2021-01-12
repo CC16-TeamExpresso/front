@@ -8,12 +8,12 @@
     border-radius:50px;
     text-align: center;
 }
-a:link {
+.spotify-link:link {
     font-family: 'Gotham Medium';
     color:white;
     text-decoration: none;
 }
-a:visited {
+.spotify-link:visited {
     color:white;
 
     text-decoration: none;

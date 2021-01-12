@@ -10,7 +10,7 @@ export default function Home() {
 			<img className="logo" src={logo} alt="logo"></img>
 			<header className="App-header">
 				<h1 className="title">Peekify</h1>
-				<div className="buttons">
+				<div>
 					<Link className="login-button" to="/login">
 						Login
 					</Link>
