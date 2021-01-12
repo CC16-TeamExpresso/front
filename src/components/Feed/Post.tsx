@@ -21,6 +21,13 @@ function Post() {
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
+	const [commentLikes, setCommentLikes] = useState(0)
+
+
+	function increaseLikes() {
+		setCommentLikes(commentLikes + 1);
+	}
+
 
 	const history = useHistory();
 
@@ -77,15 +84,19 @@ function Post() {
 		<div className="post-box">
 			<p className="profile-name">User Name</p>
 			<p className="post-music">Music being listened</p>
-			<button className="comment-send-button" onClick={sendMessage}>
-				comment
-			</button>
 
-			<input
+		
+			<textarea
 				className="post-input"
 				onChange={(e) => setChatMessage(e.target.value)}
 				value={chatMessage}
 			/>
+			<button className="comment-send-button" onClick={sendMessage}>
+				comment
+			</button>
+			<button className="like-button" onClick={increaseLikes}>
+				Like
+			</button>
 
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">Display Comments</button>
@@ -103,7 +114,7 @@ function Post() {
 							})}
 						</p>
 					) : (
-						<p>false</p>
+						<p></p>
 					)}
 				</div>
 			</div>
