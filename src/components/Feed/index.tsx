@@ -53,9 +53,10 @@ function Feed() {
     <div className="App">
       <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
+      <Spotify />
       <div className='feed' >
         <Post />
-        <Spotify />
+        
       </div>
       
     </div>
