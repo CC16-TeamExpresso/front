@@ -53,6 +53,8 @@ function Feed() {
       <Spotify />
       <div className='feed' >
         <Post />
+        <Post />
+        <Post />
         
       </div>
       

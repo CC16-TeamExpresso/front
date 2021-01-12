@@ -89,6 +89,7 @@ function Post() {
 					<button className="like-button" onClick={increaseLikes}>
 						like
 					</button>
+					<div className='likes'>{commentLikes}</div>
 					</div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
