@@ -11,7 +11,7 @@ require('dotenv').config();
 
 declare module '*.png';
 
-let BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8050"
+let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
 function Feed() {
   const [user, setUser] = useState("");
