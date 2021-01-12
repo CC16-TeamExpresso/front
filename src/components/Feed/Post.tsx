@@ -98,7 +98,7 @@ function Post(props: any) {
 		<div className="post-box">
 			<div>
 				<div className="profile-name">{props.username}</div>
-				<div className="post-music">
+				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
 						width="300"
@@ -109,7 +109,7 @@ function Post(props: any) {
 					></iframe>
 				</div>
 			</div>
-			<div>
+			<div >
 				<textarea
 					className="post-input"
 					onChange={(e) => setChatMessage(e.target.value)}
@@ -120,9 +120,9 @@ function Post(props: any) {
 						comment
 					</button>
 					<button className="like-button" onClick={increaseLikes}>
-						like
+						likes {commentLikes}
 					</button>
-					<div className="likes">{commentLikes}</div>
+					
 				</div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
