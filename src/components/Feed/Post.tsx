@@ -35,13 +35,13 @@ function Post() {
 
 	useEffect(() => {
 		const ws = new WebSocket('ws://localhost:1338/' + localStorage.getItem('token')); //token is added as url
-		ws.addEventListener(
-			'open',
-			() => {
-				ws.send(JSON.stringify({ status: 'okkk' }));
-			},
-			{ once: true }
-		);
+		// ws.addEventListener(
+		// 	'open',
+		// 	() => {
+		// 		ws.send(JSON.stringify({ status: 'okkk' }));
+		// 	},
+		// 	{ once: true }
+		// );
 
 		ws.addEventListener('error', () => {
 			//handle the error if the person isnt logged or has no token
