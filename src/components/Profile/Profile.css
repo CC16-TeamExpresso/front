@@ -1,0 +1,13 @@
+.history-feed {
+    float:left;
+    justify-content: left;
+    right:0%;
+    position:relative;
+    height:500px;
+    width:50%;
+    border: 3px solid #61dafb;
+}
+.profile-container {
+    align-items: left;
+    justify-content: left;
+}
