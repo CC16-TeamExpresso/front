@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
-import './Profile'
+
 
 
 export default function Profile() {
