@@ -80,7 +80,11 @@ function Post(props: any) {
 				});
 			} else if ((message.intent = 'old-messages')) {
 				console.log(message.data, 'older comments');
-				setChatMessages(message.data);
+				setChatMessages(
+					message.data.map((item: any) => {
+						return { user: item.email, message: item.message };
+					})
+				);
 			}
 		});
 
@@ -109,7 +113,7 @@ function Post(props: any) {
 					></iframe>
 				</div>
 			</div>
-			<div >
+			<div>
 				<textarea
 					className="post-input"
 					onChange={(e) => setChatMessage(e.target.value)}
@@ -122,7 +126,6 @@ function Post(props: any) {
 					<button className="like-button" onClick={increaseLikes}>
 						likes {commentLikes}
 					</button>
-					
 				</div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
