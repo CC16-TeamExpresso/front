@@ -126,7 +126,7 @@ function Post(props: any) {
 				</div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
-				<button className="display-comments-button">Display Comments</button>
+				<button className="display-comments-button">display comments</button>
 				<div>
 					{showComment ? (
 						<p>

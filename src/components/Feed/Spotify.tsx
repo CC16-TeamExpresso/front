@@ -24,10 +24,10 @@ function Spotify(){
          .then(res => res.json())
          .then(data => {
            if(data.result == 1) {
-             alert("Successfullt posted!");
+             alert("Successfully posted!");
              enterUri.value = "";
            }else {
-             alert("Oops something wrong!");
+             alert("Oops something went wrong!");
              enterUri.value = "";
            }
          })   
