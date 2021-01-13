@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Post.css';
+require('dotenv').config();
+
+const WEBSOCKET_PATH = process.env.REACT_APP_WEBSOCKET_URL || "ws://localhost:1338" ;
 
 type Message = {
 	user: string;
@@ -39,7 +42,7 @@ function Post(props: any) {
 	}
 
 	useEffect(() => {
-		const ws = new WebSocket('ws://localhost:1338/' + localStorage.getItem('token')); //token is added as url
+		const ws = new WebSocket(`${WEBSOCKET_PATH}/` + localStorage.getItem('token')); //token is added as url
 		// ws.addEventListener(
 		// 	'open',
 		// 	() => {
