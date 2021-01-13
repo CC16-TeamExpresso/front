@@ -14,6 +14,7 @@ frontend:
       commands:
         - yarn run build
         - echo "REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL" >> .env
+        - echo "REACT_APP_WEBSOCKET_URL=$REACT_APP_WEBSOCKET_URL" >> .env
   artifacts:
     baseDirectory: build
     files:
