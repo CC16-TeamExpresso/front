@@ -1,13 +1,11 @@
 .history-feed {
-    float:left;
-    justify-content: left;
-    right:0%;
-    position:relative;
-    height:500px;
-    width:50%;
-    border: 3px solid #61dafb;
+    border: 5px solid #C33BD6;
+
+    width: 90%;
+    height:600px;
+    overflow: auto;
+
 }
-.profile-container {
-    align-items: left;
-    justify-content: left;
-}
+.history-feed::-webkit-scrollbar {
+    display: none;
+  }
