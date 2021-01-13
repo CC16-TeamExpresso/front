@@ -1,7 +1,5 @@
-@font-face {
-  font-family:'Harlow Solid Italic';
-  src:url(./../fonts/Harlow\ Solid\ Regular.ttf)
-}
+@import url(//db.onlinewebfonts.com/c/208c60a0a6b9e5ebbc434f9f24c2aeae?family=Harlow+Solid+Italic);
+@font-face {font-family: "Harlow Solid Italic"; src: url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.eot"); src: url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.woff") format("woff"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.svg#Harlow Solid Italic") format("svg"); }
 
 
 .App-logo {
