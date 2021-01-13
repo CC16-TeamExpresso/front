@@ -1,3 +1,8 @@
+@font-face {
+  font-family:'Harlow Solid Italic';
+  src:url(../../fonts/Harlow\ Solid\ Regular.ttf)
+}
+
 .login-button {
     font-size: 50px;
     border: 3px solid #C33BD6;

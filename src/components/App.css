@@ -1,4 +1,7 @@
-@import url('http://fonts.cdnfonts.com/css/harlow-solid-italic');
+@font-face {
+  font-family:'Harlow Solid Italic';
+  src:url(./../fonts/Harlow\ Solid\ Regular.ttf)
+}
 
 
 .App-logo {
