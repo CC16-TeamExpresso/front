@@ -13,7 +13,9 @@ function Spotify(){
      function sendUri() {
         //const enterUri : any = document.getElementById("enterUri") 
         const uri = enterUri.value
+        if(uri.substring(0,7)==="spotify"){
         const body = {uri: uri}
+        console.log("the uri is " + uri)
         fetch(BACKEND_URL+"/api/music", {
         method: "POST",
         headers: {
@@ -30,21 +32,24 @@ function Spotify(){
              alert("Oops something went wrong!");
              enterUri.value = "";
            }
-         })   
+         })} else {
+           alert("Did you link with spotify? If so, click autofill.\nShare does not work when you are not playing anything.")//
+         }  
     };
     
 
    function autoFill(){
     if(access_token){
+      console.log("There is access_token")
       fetch("https://api.spotify.com/v1/me/player?additional_types=episode", {
       headers: { Authorization: "Bearer " + access_token },
     })
     .then((response) => response.json())
     .then((data) => {
       const uri = data.item.uri;      
-      enterUri.value = uri      
+      enterUri.value = uri     
     })
-    .catch((err)=>(console.log("Not playing now.")));
+    .catch((err)=>(enterUri.value = "Not playing now."));
   } else {
     console.log("no token")
   }}
