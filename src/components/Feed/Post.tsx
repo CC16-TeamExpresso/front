@@ -87,9 +87,11 @@ function Post(props: any) {
 			} else if ((message.intent = 'old-messages')) {
 				console.log(message.data, 'older comments');
 				setChatMessages(
-					message.data.map((item: any) => {
-						return { user: item.email, message: item.message };
-					})
+					message.data
+						.map((item: any) => {
+							return { user: item.email, message: item.message };
+						})
+						.reverse()
 				);
 			}
 		});
