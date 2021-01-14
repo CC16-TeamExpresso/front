@@ -4,9 +4,19 @@ import Post from '../Feed/Post';
 
 let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
-export default function Profile(props : any) {
+
+
+interface IUser {
+	username:string,
+	post: Array<Ipost>
+}
+
+interface Ipost {
+	uri: string
+}
+
+export default function Profile(props:any) {
 	const [user, setUser] = useState("");
-	const [userEmail, setUserEmail] = useState("");
 	const [feedUsers, setFeedUsers] = useState([]);
 
 
@@ -29,8 +39,8 @@ export default function Profile(props : any) {
 			.then(res => res.json())
 			.then(data => {
 			  setUser(data.user);
-			  setUserEmail(data.email);
-			  return fetch(BACKEND_URL+"/api/user", {
+
+			  return fetch(BACKEND_URL+"/api/post", {
 				method:"GET",
 				headers: {
 				  'Content-Type': 'application/json',
@@ -40,14 +50,14 @@ export default function Profile(props : any) {
 			})
 			.then(res => res.json())
 			.then(data => {
-			  setFeedUsers(data.result)
-			  console.log(data.result);
-			});
-		
+			  setFeedUsers(data.result[0].post)
+			console.log(feedUsers)
 
+			});
+			
+			
 
 	  },[] 
-	 
 	  )
 
 	return (
@@ -55,10 +65,10 @@ export default function Profile(props : any) {
 	
 				<h1 className='posthistory-title'>{user}'s post history</h1>
 				<div className='history-feed'>
-				{feedUsers.map((feedUser : any) => {
-					if(feedUser.username === 'Nada')
-          return <Post username={feedUser.username} uri={feedUser.post.uri}/>
-        }) }
+				{feedUsers.map((feedUser:any) => {
+				
+          return <Post username={user} uri={feedUser.uri}/>
+        }) }	
 
 				</div>
 				<div className='profile-info-box'>
