@@ -1,47 +1,80 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import Post from '../Feed/Post';
-import logo from '../images/logo.png';
-require('dotenv').config();
-declare module '*.png';
 
 let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
-export default function Profile() {
-	const [historyFeed, setHistoryFeed] = useState([]);
-	
+
+
+interface IUser {
+	username:string,
+	post: Array<Ipost>
+}
+
+interface Ipost {
+	uri: string
+}
+
+export default function Profile(props:any) {
+	const [user, setUser] = useState("");
+	const [feedUsers, setFeedUsers] = useState([]);
+
+
+
+
+
 	useEffect(() => {
-		const test = () => {
-			return fetch(BACKEND_URL+"/api/post",{
-				method: "GET",
+		
+	
+	
+		 
+		  fetch(BACKEND_URL+"/api/usergps", {
+			method: "PATCH",
+			headers: {
+			  'Content-Type': 'application/json',
+			  'token': localStorage.getItem('token') || '',
+			},
+			}
+		  )
+			.then(res => res.json())
+			.then(data => {
+			  setUser(data.user);
+
+			  return fetch(BACKEND_URL+"/api/post", {
+				method:"GET",
 				headers: {
-					"Content-Type": "application/json",
-					"token": localStorage.getItem("token") || "",
+				  'Content-Type': 'application/json',
+				  'token': localStorage.getItem('token') || '',
 				}
+			  })
 			})
 			.then(res => res.json())
 			.then(data => {
-				setHistoryFeed(data);
-				console.log(data);
+			  setFeedUsers(data.result[0].post.reverse())
+			console.log(feedUsers)
+
 			});
-		}
-		test();
-	},[]);
+			
+			
+
+	  },[] 
+	  )
 
 	return (
 		<div className='App'>
-			<img className='logo' src={logo} alt='logo' />
-				<div className='your-peekify'>
-					your-peekify
+	
+				<h1 className='posthistory-title'>{user}'s post history</h1>
+				<div className='history-feed'>
+				{feedUsers.map((feedUser:any) => {
+				
+          return <Post username={user} uri={feedUser.uri}/>
+        }) }	
+
 				</div>
-			<div className='history-feed'>
-				{historyFeed.map((feed : any) =>{
-					return <Post username={feed.username} uri={feed.post.uri} />;
-				})}
+				<div className='profile-info-box'>
 
-
+		
 			</div>
-
 		</div>
 	);
 }
