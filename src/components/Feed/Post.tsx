@@ -57,6 +57,7 @@ function Post(props: any) {
 			() => {
 				ws.send(
 					JSON.stringify({
+						postId: props.id,
 						intent: 'old-messages',
 						count: 5, //for now 5 comments
 					})
@@ -77,7 +78,7 @@ function Post(props: any) {
 			const data = event.data; //message arrives here
 			const message: any = processMessage(data);
 			if (!message) return; //apending old messages so they wont be lost
-			//if (message.postId !== props.id) return;
+			if (message.postId !== props.id) return;
 			if (message.intent === 'chat') {
 				//keeping all comments or messages
 				setChatMessages((oldMessages) => {
