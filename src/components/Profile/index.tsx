@@ -6,14 +6,16 @@ let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
 export default function Profile(props : any) {
 	const [user, setUser] = useState("");
+	const [userEmail, setUserEmail] = useState("");
 	const [feedUsers, setFeedUsers] = useState([]);
 
 
+
+
+
 	useEffect(() => {
-		const success = (pos: any) => {
-		  console.log("success");
-		  const lat = pos.coords.latitude;
-		  const lng = pos.coords.longitude;
+		
+	
 	
 		 
 		  fetch(BACKEND_URL+"/api/usergps", {
@@ -22,15 +24,12 @@ export default function Profile(props : any) {
 			  'Content-Type': 'application/json',
 			  'token': localStorage.getItem('token') || '',
 			},
-			body: JSON.stringify({
-			  lat: lat,
-			  lng: lng
-			  })
 			}
 		  )
 			.then(res => res.json())
 			.then(data => {
 			  setUser(data.user);
+			  setUserEmail(data.email);
 			  return fetch(BACKEND_URL+"/api/user", {
 				method:"GET",
 				headers: {
@@ -42,14 +41,14 @@ export default function Profile(props : any) {
 			.then(res => res.json())
 			.then(data => {
 			  setFeedUsers(data.result)
-			  console.log();
+			  console.log(data.result);
 			});
-		}
-		const fail = () => {
-		  alert("Please turn on GPS");
-		}
-		navigator.geolocation.getCurrentPosition(success, fail);
-	  },[])
+		
+
+
+	  },[] 
+	 
+	  )
 
 	return (
 		<div className='App'>
@@ -57,6 +56,7 @@ export default function Profile(props : any) {
 				<h1 className='posthistory-title'>{user}'s post history</h1>
 				<div className='history-feed'>
 				{feedUsers.map((feedUser : any) => {
+					if(feedUser.username === 'Nada')
           return <Post username={feedUser.username} uri={feedUser.post.uri}/>
         }) }
 
