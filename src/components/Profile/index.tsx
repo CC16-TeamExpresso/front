@@ -54,8 +54,7 @@ export default function Profile(props:any) {
                     setFeedUsers(data.result[0].post.reverse())
                 }
 			});
-			
-			
+					
 
 	  },[] 
 	  )
