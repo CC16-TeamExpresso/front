@@ -3,11 +3,11 @@ import { useHistory } from 'react-router-dom';
 import './Post.css';
 require('dotenv').config();
 
-const WEBSOCKET_PATH = process.env.REACT_APP_WEBSOCKET_URL || "ws://localhost:1338" ;
+const WEBSOCKET_PATH = process.env.REACT_APP_WEBSOCKET_URL || 'ws://localhost:1338';
 
 type Message = {
 	user: string;
-	postId : string,
+	postId: string;
 	message: string;
 	intent: 'chat';
 };
@@ -38,7 +38,7 @@ function Post(props: any) {
 			return;
 		}
 		//websocket connected
-		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat' ,postId: props.id}));
+		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat', postId: props.id }));
 		setChatMessage(''); //no repeated messages
 	}
 
@@ -57,6 +57,7 @@ function Post(props: any) {
 			() => {
 				ws.send(
 					JSON.stringify({
+						postId: props.id,
 						intent: 'old-messages',
 						count: 5, //for now 5 comments
 					})
