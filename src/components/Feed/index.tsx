@@ -16,6 +16,14 @@ let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 function Feed() {
   const [user, setUser] = useState("");
   const [feedUsers, setFeedUsers] = useState([]);
+
+  //for test
+  // const [feedUsers, setFeedUsers] = useState([
+  //   {username:"test1", post:{uri: "track/5Hu29JT4xtbRUBTZeOAjxW", _id: "test1"}},
+  //   {username:"test2", post:{uri: "track/10Nmj3JCNoMeBQ87uw5j8k", _id: "test2"}}
+  // ]);
+
+  
   useEffect(() => {
     const success = (pos: any) => {
       console.log("success");
@@ -67,7 +75,7 @@ function Feed() {
       <Spotify />
       <div className='feed' >
         {feedUsers.map((feedUser : any) => {
-          return <Post username={feedUser.username} uri={feedUser.post.uri}/>
+          return <Post username={feedUser.username} uri={feedUser.post.uri} id={feedUser.post._id}/>
         }) }
       </div>
       
