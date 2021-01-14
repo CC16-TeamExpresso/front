@@ -50,7 +50,7 @@ export default function Profile(props:any) {
 			})
 			.then(res => res.json())
 			.then(data => {
-			  setFeedUsers(data.result[0].post)
+			  setFeedUsers(data.result[0].post.reverse())
 			console.log(feedUsers)
 
 			});
