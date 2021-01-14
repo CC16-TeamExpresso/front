@@ -1,0 +1,15 @@
+.your-peekify {
+    font-size: 2em;
+}
+
+.history-feed {
+    border: 5px solid #C33BD6;
+
+    width: 90%;
+    height:600px;
+    overflow: auto;
+
+}
+.history-feed::-webkit-scrollbar {
+    display: none;
+  }
