@@ -4,15 +4,19 @@ require('dotenv').config();
 function Spotify(){
     
    const [currentUri, setCurrentUri] = useState("");
+   const [loginStatus, setLoginStatus] = useState(false);
+  
+   
 
    let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
     //obtain access token 
      const access_token = window.location.search.slice(14);
-     const enterUri : any = document.getElementById("enterUri")
+    
+     //const enterUri : any = document.getElementById("enterUri") 
 
      function sendUri() {
-        
+        if (currentUri !== ""){
           const uri = currentUri
           const body = {uri: uri}
           console.log("the uri is " + uri)
@@ -25,18 +29,18 @@ function Spotify(){
         body:JSON.stringify(body)})
          .then(res => res.json())
          .then(data => {
-           if(data.result == 1) {
+           if(data.result === 1) {
              alert("Successfully posted!");
-             enterUri.value = "";
+            // enterUri.value = "";
            }else {
              alert("Oops something went wrong!");
-             enterUri.value = "";
+            // enterUri.value = "";
            }
-         })
+         })} else {alert("Press Refresh!")}
     };
     
 
-   function autoFill(){
+   function refresh(){
     if(access_token){
       fetch("https://api.spotify.com/v1/me/player?additional_types=episode", {
       headers: { Authorization: "Bearer " + access_token },
@@ -48,17 +52,24 @@ function Spotify(){
     })
     .catch((err)=>(alert("Not playing now.")));
   } else {
+    alert("Log in with Spotify!")
     console.log("no token")
   }}
 
     let spotifyLoginUrl = BACKEND_URL + "/spotifylogin"
-
+  
     return (
     <div>
+      { !access_token 
+      ?
       <button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Log in with Spotify</a></button>
-        <form><input className='spotify-input' type="text" id="enterUri" ></input></form>
+      :<button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Logged in with Spotify</a></button>
+      }
+      {/* <form><input className='spotify-input' type="text" id="enterUri" ></input></form> */}
+      <button className='spotify-refresh' id="fillUri" onClick={refresh}>Refresh</button>
       <button className='spotify-share-button'id="share" onClick={sendUri}>Share</button>
-      <button className='spotify-autofill' id="fillUri" onClick={autoFill}>Autofill</button>
+      { currentUri !== "" 
+      ?
       <iframe
               src={`https://open.spotify.com/embed/${currentUri.slice(8).replace(":", "/")}`}
               width="300"
@@ -67,6 +78,7 @@ function Spotify(){
               allowTransparency={true}
               allow="encrypted-media"
         ></iframe>
+      : null}
     </div>
     )
 }
