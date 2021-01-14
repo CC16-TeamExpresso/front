@@ -134,7 +134,28 @@ function Post(props: any) {
 					<button className="like-button" onClick={increaseLikes}>
 						likes {commentLikes}
 					</button>
-				</div>
+					
+
+						<div>
+					{showComment ? (
+						<p>
+							{' '}
+							{chatMessages.map((message, index) => {
+								return (
+									<div key={index} onClick={handleShowComments}>
+										<div className="comment-author-phone">{message.user}</div>
+										<div className="comment-text-phone">{message.message}</div>
+									</div>
+								);
+							})}
+						</p>
+					) : (
+						<div className="comment-message-phone" onClick={handleShowComments}>
+						<button className="display-comments-button-phone">
+							display comments
+							</button></div>
+					)}
+				</div></div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">display comments</button>
