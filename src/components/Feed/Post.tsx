@@ -7,6 +7,7 @@ const WEBSOCKET_PATH = process.env.REACT_APP_WEBSOCKET_URL || "ws://localhost:13
 
 type Message = {
 	user: string;
+	postId : string,
 	message: string;
 	intent: 'chat';
 };
@@ -37,7 +38,7 @@ function Post(props: any) {
 			return;
 		}
 		//websocket connected
-		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat' }));
+		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat' ,postId: props.id}));
 		setChatMessage(''); //no repeated messages
 	}
 
@@ -76,6 +77,7 @@ function Post(props: any) {
 			const data = event.data; //message arrives here
 			const message: any = processMessage(data);
 			if (!message) return; //apending old messages so they wont be lost
+			if (message.postId !== props.id) return;
 			if (message.intent === 'chat') {
 				//keeping all comments or messages
 				setChatMessages((oldMessages) => {
