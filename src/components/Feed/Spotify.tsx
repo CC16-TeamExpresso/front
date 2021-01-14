@@ -59,14 +59,15 @@ function Spotify(){
     let spotifyLoginUrl = BACKEND_URL + "/spotifylogin"
   
     return (
-    <div>
+    <div className='spotify-container'>
+
       { !access_token 
       ?
       <button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Log in with Spotify</a></button>
-      :<button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Logged in with Spotify</a></button>
+      :<button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Logged in</a></button>
       }
       {/* <form><input className='spotify-input' type="text" id="enterUri" ></input></form> */}
-      <button className='spotify-refresh' id="fillUri" onClick={refresh}>Refresh</button>
+      <button className='spotify-refresh' id="fillUri" onClick={refresh}>Current Song</button>
       <button className='spotify-share-button'id="share" onClick={sendUri}>Share</button>
       { currentUri !== "" 
       ?
@@ -83,3 +84,4 @@ function Spotify(){
     )
 }
 export default Spotify;
+
