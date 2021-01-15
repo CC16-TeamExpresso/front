@@ -89,17 +89,21 @@ function Feed() {
   },[])
   return (
     <div className="App">
+      <div className='profile-wrapper'>
+      <div className='update-location-container'>
+        <button className='update-location-button' onClick={updateLocation}>Update location</button>
+        <button className='filter-button'onClick={filterUsers}>filter</button>
+        <input className='update-location-input'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
+
+      </div>
     		<Link className="profile-link" to="/Profile">
 						Profile
 				</Link>
+      </div>
       <img className="logo" src={logo} alt='logo'></img>
       <h1>{user}</h1>
       <Spotify />
-      <div>
-        <button onClick={updateLocation}>update location</button>
-        <input id="inputDistance" type="text" onChange={inputDistance}/>km
-        <button onClick={filterUsers}>filter</button>
-      </div>
+
       <div className='feed' >
         {feedUsers.map((feedUser : any) => {
           return <Post username={feedUser.username} uri={feedUser.post.uri} id={feedUser.post._id}/>

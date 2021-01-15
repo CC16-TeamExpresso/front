@@ -69,7 +69,7 @@
 }
 
 .post-input, select, textarea {
-  margin-top:27px;
+    margin-top: 27px;
     background-color: #3c1b66;
     color:#61dafb;
     border-radius:3px;
