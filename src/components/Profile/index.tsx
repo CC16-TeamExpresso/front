@@ -66,7 +66,7 @@ export default function Profile(props:any) {
 				<div className='history-feed'>
 				{feedUsers.map((feedUser:any) => {
 				
-          return <Post username={user} uri={feedUser.uri}/>
+          return <Post isHistory={true} username={user} uri={feedUser.uri}/>
         }) }	
 
 				</div>

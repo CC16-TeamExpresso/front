@@ -186,6 +186,7 @@
     }
 }
 
+@media screen and (max-width: 500px) {
 
 
 .profile-name {
@@ -364,4 +365,5 @@
     100% {
       text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
     }
+}
 }
