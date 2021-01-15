@@ -9,3 +9,111 @@
 .feed::-webkit-scrollbar {
     display: none;
   }
+  .profile-link {
+    position:fixed;
+    right:5%;
+      text-align: center;
+      color:#34de04;
+      width:200px;
+      font-size: 50px;
+      border: 3px solid #C33BD6;
+      opacity: 1;
+      animation: flicker 5s linear  reverse infinite;
+  }
+
+
+    .profile-link::after {
+    content: '';
+    width: 150%;
+    -webkit-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+    -moz-box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+    box-shadow: -35px 0px 60px 8px rgba(255,255,255,1);
+    }
+    
+    
+    
+    
+    
+    @keyframes flicker {
+    0% {
+      opacity: 0.4;
+    }
+    5% {
+      opacity: 0.5;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    15% {
+      opacity: 0.85;
+    }
+    25% {
+      opacity: 0.5;
+    }
+    30% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 0.1;
+    }
+    40% {
+      opacity: 0.25;
+    }
+    45% {
+      opacity: 0.5;
+    }
+    60% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 0.85;
+    }
+    80% {
+      opacity: 0.4;
+    }
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+    }
+
+
+    .update-location-button{
+        display:block;
+        font-size: 25px;
+        height: 60px;
+        width: 100%;
+        border: 3px solid #61dafb;
+        color: #c33bd6;
+        background-color: #1e0045;
+        text-align: center;
+        font-family: "Harlow Solid Italic", sans-serif;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .update-location-input {
+        background-color: #3c1b66;
+        color:#61dafb;
+        border-radius:3px;
+        height:20px;
+        width:100px;
+        padding: 2px;
+    }
+    .filter-button{
+        font-size: 20px;
+        height: 30px;
+        width: 70px;
+        border: 3px solid #c33bd6;
+        color: #34de04;
+        background-color: #1e0045;
+        text-align: center;
+        font-family: "Harlow Solid Italic", sans-serif;
+        margin-top: 5px;
+        margin-bottom: 5px;       
+    }
+    .update-location-container {
+        left:5%;
+        position:fixed;
+    }
