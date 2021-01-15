@@ -65,6 +65,7 @@ function Feed() {
     setDistance(Number(e.target.value));
   }
 
+  
   const filterUsers = () => {
     if (isNaN(distance)) {
       alert("please input integer");
