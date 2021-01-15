@@ -21,6 +21,7 @@ function processMessage(payload: string) {
 }
 
 function Post(props: any) {
+	
 	const [showComment, setShowComment] = useState(false);
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
@@ -122,24 +123,32 @@ function Post(props: any) {
 				</div>
 			</div>
 			<div>
+			{!props.isHistory ? (
 				<textarea
 					className="post-input"
 					onChange={(e) => setChatMessage(e.target.value)}
 					value={chatMessage}
-				/>
+				/>):<p></p>}
 				<div className="button-container">
+					{!props.isHistory ? (
 					<button className="comment-send-button" onClick={sendMessage}>
 						comment
 					</button>
+					):<p></p>}
 					<button className="like-button" onClick={increaseLikes}>
 						likes {commentLikes}
 					</button>
-				</div>
+					
+
+						<div>
+
+		
+				</div></div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">display comments</button>
 				<div>
-					{showComment ? (
+					{showComment? (
 						<p>
 							{' '}
 							{chatMessages.map((message, index) => {

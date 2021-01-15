@@ -2,11 +2,20 @@
     font-family:'Gotham Medium';
     src:url(../../fonts/Gotham\ Bold\ Regular.ttf)
   }
+  .display-comments-button-phone{
+    visibility:hidden;
+  }
+  .comment-author-phone {
+    visibility:hidden;
+  }
+  .comment-text-phone {
+    visibility:hidden;
+  }
 
 .post-box {
     display:flex;
     height:20%;
-    width: 60%;
+    width: 850px;
     margin:20%;
     margin-top:5%;
     margin-bottom: 5%;
@@ -33,11 +42,13 @@
 }
 
 .comment-author {
-    font-family:'Arial, Helvetica, sans-serif';
-    font-size:16px;
+    font-family:'Gotham Medium';
+    font-size:20px;
     background-color: #1E0045;
-
+    border:2px solid #C33BD6;
+    border-radius: 5px;;
     color: #34DE04;
+    text-align: center;
 
     z-index: 10;
 
@@ -45,10 +56,14 @@
 
 .comment-text {
     font-family:'Arial, Helvetica, sans-serif';
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
     background-color: #3c1b66;
-  
-    color:#61dafb;
-    font-size:12px;
+    margin-left:10px;
+    margin-right:10px;
+    color:white;
+    font-size:16px;
     z-index: 10;
 
 }
@@ -170,16 +185,185 @@
       text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
     }
 }
-/* .likes {
-    display:block;
-    margin-left:5px;
-    font-size: 20px;
-   
-    overflow:hidden;
-    width: 20px;
 
-    color: #ff7d03;
+@media screen and (max-width: 500px) {
+
+
+.profile-name {
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-family:'Gotham Medium';
+    font-size:20px;
+}
+
+.post-music {
+    margin-left: 5px;
+    margin-right:5px;
+    font-family:'Gotham Medium';
+    display:block;
+}
+
+.comment-message {
+    display:inline-block;
+
+}
+
+.comment-author {
+  visibility:hidden;
+
+
+}
+
+.comment-text  {
+  
+  visibility:hidden;
+
+
+}
+.comment-author-phone {
+  display:absolute;
+
+  visibility:visible;
+  font-family:'Arial, Helvetica, sans-serif';
+  font-size:16px;
+  background-color: #1E0045;
+
+  color: #34DE04;
+
+
+}
+.comment-text-phone {
+  display:absolute;
+  visibility:visible;
+  font-family:'Arial, Helvetica, sans-serif';
+  font-size:16px;
+  background-color: #1E0045;
+
+  color: #34DE04;
+
+
+}
+.comment-message-phone{
+  display:flex;
+}
+.post-input, select, textarea {
+ 
+
+    margin-top:0px;
+    background-color: #3c1b66;
+    color:#61dafb;
+    border-radius:3px;
+    height:38px;
+    width:275px;
+    padding: 10px;
+
+
+
+}
+
+.comment-send-button {
+    display:block;
+    font-size: 15px;
+    height: 30px;
+    overflow:hidden;
+    width: 100px;
+    border: 3px solid #C33BD6;
+    color:white;
     background-color: #1E0045;
     text-align: center;
-    font-family: 'Harlow Solid Italic', sans-serif;
-} */
+    font-family: 'Gotham Medium', sans-serif;
+    margin-right: 5px;
+
+}
+
+.comment-send-button:hover {
+    text-align: center;
+    -webkit-animation: title 1s ease-in-out infinite alternate;
+    -moz-animation: title 1s ease-in-out infinite alternate;
+    animation: title 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes title {
+    0%{
+      color: rgb(90, 73, 99);
+       
+    }
+    
+    100% {
+      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+    }
+}
+.display-comments-button {
+  visibility: hidden;
+
+}
+.display-comments-button-phone {
+  visibility:visible;
+  font-size: 15px;
+  height: 60px;
+  width: 95px;
+  border: 3px solid #C33BD6;
+  color:white;
+  background-color: #1E0045;
+
+  text-align: center;
+  font-family: 'Gotham Medium', sans-serif;
+}
+
+.display-comments-button-phone:hover {
+    text-align: center;
+    -webkit-animation: title 1s ease-in-out infinite alternate;
+    -moz-animation: title 1s ease-in-out infinite alternate;
+    animation: title 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes title {
+    0%{
+      color: rgb(90, 73, 99);
+       
+    }
+    
+    100% {
+      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+    }
+}
+
+
+.button-container {
+    display:flex;
+}
+
+
+
+.like-button {
+    display:block;
+    font-size: 15px;
+    height: 30px;
+    overflow:hidden;
+    width: 100px;
+    border: 3px solid #C33BD6;
+    color:white;
+
+    background-color: #1E0045;
+    text-align: center;
+    font-family: 'Gotham Medium', sans-serif;
+}
+
+.like-button:hover {
+    text-align: center;
+    -webkit-animation: title 1s ease-in-out infinite alternate;
+    -moz-animation: title 1s ease-in-out infinite alternate;
+    animation: title 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes title {
+    0%{
+      color: rgb(90, 73, 99);
+       
+    }
+    
+    100% {
+      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
+    }
+}
+}
