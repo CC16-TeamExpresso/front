@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import Post from '../Feed/Post';
+import { useHistory } from 'react-router-dom';
 
 let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
@@ -61,10 +62,12 @@ export default function Profile(props:any) {
 	  },[] 
 	  )
 
+	  const history = useHistory();
+
 	return (
 		<div className='App'>
-	
-				<h1 className='posthistory-title'>{user}'s post history</h1>
+			    <button onClick={() => history.goBack()}>Go Back</button>		
+    			<h1 className='posthistory-title'>{user}'s post history</h1>
 				<div className='history-feed'>
 				{feedUsers.map((feedUser:any) => {
 				
