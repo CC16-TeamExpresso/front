@@ -49,7 +49,6 @@ function Feed() {
       .then(res => res.json())
       .then(data => {
         setFeedUsers(data.result);
-        console.log(data);
       });
   }
   const fail = () => {
@@ -80,7 +79,6 @@ function Feed() {
         .then(res => res.json())
         .then(data => {
           setFeedUsers(data.result);
-          console.log(data);
         })
     }
   }
