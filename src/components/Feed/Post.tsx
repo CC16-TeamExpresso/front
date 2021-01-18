@@ -44,7 +44,6 @@ function Post(props: any) {
             }
         ).then(res => res.json())
          .then(data => {
-             console.log(data.like)
              setCommentLikes(data.like) 
             //  updateLikes();  //after get method implement
             })
