@@ -146,18 +146,94 @@ function Post(props: any) {
 	}
 
 	return (
+		<div className='phone-and-web-display'>
+
+			<div className="post-box-phone">
+						<div>
+							<div className="profile-name-phone">{props.username}</div>
+							<div>
+								<iframe
+									
+									src={`https://open.spotify.com/embed/${props.uri}`}
+									width="350"
+									height="80"
+									frameBorder="0"
+									allowTransparency={true}
+									allow="encrypted-media"
+								></iframe>
+								<div className="comment-message-phone" onClick={handleShowComments}>
+
+			</div>
+							</div>
+						</div>
+						<div>
+						{!props.isHistory ? (
+							<textarea
+								className="post-input-phone"
+								onChange={(e) => setChatMessage(e.target.value)}
+								value={chatMessage}
+							/>):<p></p>}
+							<div className="button-container-phone">
+								{!props.isHistory ? (
+								<button className="comment-send-button-phone" onClick={sendMessage}>
+									comment
+								</button>
+								):<p></p>}
+								<button className="like-button-phone"
+									onClick={() => {
+									if(isLike === false){
+										increaseLikes(props.id);
+										setIsLike(!isLike);
+									} else{
+										decreaseLikes(props.id);
+										setIsLike(!isLike);
+									}
+								}}>
+									likes {commentLikes}</button>
+												<button className="display-comments-button-phone" onClick={handleShowComments}>display comments</button>
+
+
+									<div>
+
+					
+							</div>
+							</div>
+						</div>
+
+		</div>
+
 		<div className="post-box">
 			<div>
 				<div className="profile-name">{props.username}</div>
 				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
-						width="300"
+						width="400"
 						height="80"
 						frameBorder="0"
 						allowTransparency={true}
 						allow="encrypted-media"
 					></iframe>
+								<div className="comment-message" onClick={handleShowComments}>
+				<button className="display-comments-button">display comments</button>
+				<div>
+					{showComment? (
+						<p>
+							{' '}
+							{chatMessages.map((message, index) => {
+								return (
+									<div key={index}>
+										<div className="comment-author">{message.user}</div>
+										<div className="comment-text">{message.message}</div>
+									</div>
+								);
+							})}
+						</p>
+					) : (
+						<p></p>
+					)}
+				</div>
+			</div>
 				</div>
 			</div>
 			<div>
@@ -191,26 +267,8 @@ function Post(props: any) {
 		
 				</div></div>
 			</div>
-			<div className="comment-message" onClick={handleShowComments}>
-				<button className="display-comments-button">display comments</button>
-				<div>
-					{showComment? (
-						<p>
-							{' '}
-							{chatMessages.map((message, index) => {
-								return (
-									<div key={index}>
-										<div className="comment-author">{message.user}</div>
-										<div className="comment-text">{message.message}</div>
-									</div>
-								);
-							})}
-						</p>
-					) : (
-						<p></p>
-					)}
-				</div>
-			</div>
+
+		</div>
 		</div>
 	);
 }

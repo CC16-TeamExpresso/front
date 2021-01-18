@@ -2,14 +2,54 @@
     font-family:'Gotham Medium';
     src:url(../../fonts/Gotham\ Bold\ Regular.ttf)
   }
-  .display-comments-button-phone{
-    visibility:hidden;
+  .post-box-phone {
+    display: none;
   }
+  
+  .profile-name-phone {
+    display: none;
+  
+  }
+  
+  .post-input-phone {
+    display: none;
+  
+  }
+  
+  .button-container-phone {
+    display: none;
+  
+  }
+  
+  .comment-send-button-phone {
+    display:none;
+
+  
+  }
+  
+  .like-button-phone {
+    display:none;
+
+  
+  }
+  .comment-message-phone {
+    display: none;
+  
+  }
+  
+  .display-comments-button-phone {
+    display: none;
+  
+  }
+  
   .comment-author-phone {
-    visibility:hidden;
+    display: none;
+  
   }
+  
   .comment-text-phone {
-    visibility:hidden;
+    display: none;
+  
   }
 
 .post-box {
@@ -44,6 +84,7 @@
 .comment-author {
     font-family:'Gotham Medium';
     font-size:20px;
+    width:100px;
     background-color: #1E0045;
     border:2px solid #C33BD6;
     border-radius: 5px;;
@@ -55,6 +96,7 @@
 }
 
 .comment-text {
+  width:200px;
     font-family:'Arial, Helvetica, sans-serif';
     padding-left: 5px;
     padding-right: 5px;
@@ -186,184 +228,174 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 
-
-.profile-name {
-    margin-left: 15px;
-    margin-bottom: 5px;
-    font-family:'Gotham Medium';
-    font-size:20px;
-}
-
-.post-music {
-    margin-left: 5px;
-    margin-right:5px;
-    font-family:'Gotham Medium';
-    display:block;
-}
-
-.comment-message {
-    display:inline-block;
-
-}
-
-.comment-author {
-  visibility:hidden;
-
-
-}
-
-.comment-text  {
-  
-  visibility:hidden;
-
-
-}
-.comment-author-phone {
-  display:absolute;
-
-  visibility:visible;
-  font-family:'Arial, Helvetica, sans-serif';
-  font-size:16px;
-  background-color: #1E0045;
-
-  color: #34DE04;
-
-
-}
-.comment-text-phone {
-  display:absolute;
-  visibility:visible;
-  font-family:'Arial, Helvetica, sans-serif';
-  font-size:16px;
-  background-color: #1E0045;
-
-  color: #34DE04;
-
-
-}
-.comment-message-phone{
-  display:flex;
-}
-.post-input, select, textarea {
- 
-
-    margin-top:0px;
-    background-color: #3c1b66;
-    color:#61dafb;
-    border-radius:3px;
-    height:38px;
-    width:275px;
-    padding: 10px;
-
-
-
-}
-
-.comment-send-button {
-    display:block;
-    font-size: 15px;
-    height: 30px;
-    overflow:hidden;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
-    background-color: #1E0045;
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
-    margin-right: 5px;
-
-}
-
-.comment-send-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
+  .post-box {
+    display:none;
   }
   
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
-}
-.display-comments-button {
-  visibility: hidden;
+  .profile-name {
+    display:none;
 
+  
+  }
+  
+  .post-input {
+    display:none;
+
+  
+  }
+  
+  .button-container {
+    display:none;
+
+  
+  }
+  
+  .comment-send-button {
+    display:none;
+
+  
+  }
+  
+  .like-button {
+    display:none;
+
+  
+  }
+  .comment-message {
+    display:none;
+
+  
+  }
+  
+  .display-comments-button {
+    display:none;
+
+  
+  }
+  
+  .comment-author {
+    display:none;
+
+  
+  }
+  
+  .comment-text {
+    display:none;
+
+  
+  }
+
+
+.post-box-phone {
+  display:block;
+  height:400px;
+  width: 400px;
+  margin-top:2%;
+  margin-bottom: 5%;
+  border: 3px solid #61dafb;
 }
-.display-comments-button-phone {
-  visibility:visible;
+
+.profile-name-phone {
+  display:block;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-family:'Gotham Medium';
+  font-size:20px;
+}
+
+.post-input-phone {
+  display:block;
+  margin-top: 27px;
+  background-color: #3c1b66;
+  color:#61dafb;
+  border-radius:3px;
+  height:38px;
+  width:350px;
+  padding: 10px;
+}
+
+.button-container-phone {
+  display:block;
+}
+
+.comment-send-button-phone {
+
+  display:flex;
   font-size: 15px;
-  height: 60px;
-  width: 95px;
+  height: 30px;
+  overflow:hidden;
+  width: 100px;
   border: 3px solid #C33BD6;
   color:white;
   background-color: #1E0045;
+  text-align: center;
+  font-family: 'Gotham Medium', sans-serif;
+  margin-right: 5px;
+}
 
+.like-button-phone {
+
+  display:block;
+  font-size: 15px;
+  height: 30px;
+  overflow:hidden;
+  width: 100px;
+  border: 3px solid #C33BD6;
+  color:white;
+
+  background-color: #1E0045;
   text-align: center;
   font-family: 'Gotham Medium', sans-serif;
 }
 
-.display-comments-button-phone:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
+
+.display-comments-button-phone {
+  display:block;
+  font-size: 15px;
+  height: 60px;
+  width: 100px;
+  border: 3px solid #C33BD6;
+  color:white;
+  background-color: #1E0045;
   
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
+  text-align: center;
+  font-family: 'Gotham Medium', sans-serif;
 }
 
 
-.button-container {
-    display:flex;
+.comment-message-phone {
+  display:flex;
+
 }
 
+.comment-author-phone {
+  font-family:'Gotham Medium';
+  font-size:20px;
+  width:100px;
+  background-color: #1E0045;
+  border:2px solid #C33BD6;
+  border-radius: 5px;;
+  color: #34DE04;
+  text-align: center;
 
+  z-index: 10;
 
-.like-button {
-    display:block;
-    font-size: 15px;
-    height: 30px;
-    overflow:hidden;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
-
-    background-color: #1E0045;
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
 }
 
-.like-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
+.comment-text-phone {
+  width:200px;
+  font-family:'Arial, Helvetica, sans-serif';
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  background-color: #3c1b66;
+  margin-left:10px;
+  margin-right:10px;
+  color:white;
+  font-size:16px;
+  z-index: 10;
+
 }
 }
