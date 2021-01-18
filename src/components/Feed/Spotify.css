@@ -87,3 +87,16 @@
     text-shadow: 0 0 5px #c33bd6, 0 0 10px #c33bd6;
   }
 }
+
+@media only screen and (max-width:600px){
+  .spotify-refresh{
+    margin-top: 5px;;
+    margin-left:25%;
+    width:50%;
+  }
+  .spotify-share-button {
+    margin-left: 25%;
+    width:50%;
+
+  }
+}
