@@ -10,9 +10,11 @@ type Message = {
 	postId: string;
 	message: string;
 	intent: 'chat';
+	//add date
 };
 
 function processMessage(payload: string) {
+	// move it utility
 	try {
 		return JSON.parse(payload);
 	} catch (error) {
@@ -21,7 +23,6 @@ function processMessage(payload: string) {
 }
 
 function Post(props: any) {
-	
 	const [showComment, setShowComment] = useState(false);
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
@@ -39,12 +40,12 @@ function Post(props: any) {
 			return;
 		}
 		//websocket connected
-		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat', postId: props.id }));
+		wsRef.send(JSON.stringify({ message: chatMessage, intent: 'chat', postId: props.id })); //this is sent to wsfunctions as "new message"
 		setChatMessage(''); //no repeated messages
 	}
 
 	useEffect(() => {
-		const ws = new WebSocket(`${WEBSOCKET_PATH}/` + localStorage.getItem('token')); //token is added as url
+		const ws = new WebSocket(`${WEBSOCKET_PATH}/` + localStorage.getItem('token')); //token is added for authentication as url so it can be extracted
 		// ws.addEventListener(
 		// 	'open',
 		// 	() => {
@@ -83,10 +84,12 @@ function Post(props: any) {
 			if (message.intent === 'chat') {
 				//keeping all comments or messages
 				setChatMessages((oldMessages) => {
-					return [...oldMessages, message as Message];
+					//this is meant to keep all old comments in chat messages here
+					return [...oldMessages, message as Message]; //appending heppen here
 				});
 			} else if ((message.intent = 'old-messages')) {
-				console.log(message.data, 'older comments');
+				// once page is refreshed the intent is always "old messages" by default and code will jumb here from after "event listner" for opn
+				console.log(message.data, 'older comments'); //please check older comments
 				setChatMessages(
 					message.data
 						.map((item: any) => {
@@ -123,35 +126,38 @@ function Post(props: any) {
 				</div>
 			</div>
 			<div>
-			{!props.isHistory ? (
-				<textarea
-					className="post-input"
-					onChange={(e) => setChatMessage(e.target.value)}
-					value={chatMessage}
-				/>):<p></p>}
+				{!props.isHistory ? (
+					<textarea
+						className="post-input"
+						onChange={(e) => setChatMessage(e.target.value)}
+						value={chatMessage}
+					/>
+				) : (
+					<p></p>
+				)}
 				<div className="button-container">
 					{!props.isHistory ? (
-					<button className="comment-send-button" onClick={sendMessage}>
-						comment
-					</button>
-					):<p></p>}
+						<button className="comment-send-button" onClick={sendMessage}>
+							comment
+						</button>
+					) : (
+						<p></p>
+					)}
 					<button className="like-button" onClick={increaseLikes}>
 						likes {commentLikes}
 					</button>
-					
 
-						<div>
-
-		
-				</div></div>
+					<div></div>
+				</div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">display comments</button>
 				<div>
-					{showComment? (
+					{showComment ? (
 						<p>
 							{' '}
 							{chatMessages.map((message, index) => {
+								//index is the key
 								return (
 									<div key={index}>
 										<div className="comment-author">{message.user}</div>
