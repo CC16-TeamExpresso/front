@@ -44,6 +44,7 @@ function Post(props: any) {
             }
         ).then(res => res.json())
          .then(data => {
+             console.log(data.like)
              setCommentLikes(data.like) 
             //  updateLikes();  //after get method implement
             })
@@ -146,6 +147,8 @@ function Post(props: any) {
 
 	return (
 		<div className="post-box">
+			
+
 			<div>
 				<div className="profile-name">{props.username}</div>
 				<div>
@@ -186,7 +189,8 @@ function Post(props: any) {
 					
 
 						<div>
-
+				<button className="display-comments-button-phone" onClick={handleShowComments}>display comments</button>
+					
 		
 				</div></div>
 			</div>
@@ -198,7 +202,7 @@ function Post(props: any) {
 							{' '}
 							{chatMessages.map((message, index) => {
 								return (
-									<div key={index}>
+									<div className='comment-container'key={index}>
 										<div className="comment-author">{message.user}</div>
 										<div className="comment-text">{message.message}</div>
 									</div>
