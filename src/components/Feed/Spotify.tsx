@@ -31,7 +31,6 @@ function Spotify(){
         })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.item)
           const uri = data.item.uri;      
           setCurrentUri(uri)    
         }).catch((err)=>console.log("no response because no token"))

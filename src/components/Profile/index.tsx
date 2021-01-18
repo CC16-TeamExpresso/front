@@ -21,13 +21,8 @@ export default function Profile(props:any) {
 	const [feedUsers, setFeedUsers] = useState([]);
 
 
+	useEffect(() => {	
 
-
-
-	useEffect(() => {
-		
-	
-	
 		 
 		  fetch(BACKEND_URL+"/api/usergps", {
 			method: "PATCH",
@@ -61,6 +56,7 @@ export default function Profile(props:any) {
 	  )
 
 	  const history = useHistory();
+	  //onsole.log("index.tsx line 59 feedUser is " + feedUsers)
 
 	return (
 		<div className='App'>
@@ -68,9 +64,7 @@ export default function Profile(props:any) {
     			<h1 className='posthistory-title'>{user}'s post history</h1>
 				<div className='history-feed'>
 				{feedUsers.map((feedUser:any) => {
-				
-          //return <Post isHistory={true} username={user} uri={feedUser.uri}/>
-		  return <Post isHistory={true} username={user} uri={feedUser.uri} like={feedUser.like}/>
+		  return <Post isHistory={true} username={user} uri={feedUser.uri} id={feedUser._id} like={feedUser.like} />
         }) }	
 
 				</div>
