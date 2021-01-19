@@ -5,6 +5,7 @@
 
 .feed {
     border: 5px solid #C33BD6;
+    margin-left: 0%;
   border-left:none;
   border-right:none;
     width: 70%;
@@ -127,7 +128,9 @@
 
     @media only screen and (max-width: 600px) {
       .feed {
-        width:400px;
+        width:350px;
+        border-left:none;
+        border-right:none;
       }
       .dropdown {
         top:5%;
