@@ -60,6 +60,32 @@
     z-index: 10;
 
 }
+.comment-author-history {
+  font-family:'Gotham Medium';
+  font-size:20px;
+  background-color: #1E0045;
+  border:2px solid #C33BD6;
+  border-radius: 5px;;
+  color: #34DE04;
+  text-align: center;
+
+  z-index: 10;
+
+}
+
+.comment-text-history {
+  font-family:'Arial, Helvetica, sans-serif';
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  background-color: #3c1b66;
+  margin-left:10px;
+  margin-right:10px;
+  color:white;
+  font-size:16px;
+  z-index: 10;
+
+}
 
 .post-input, select, textarea {
     margin-top: 27px;
