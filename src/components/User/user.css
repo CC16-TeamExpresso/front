@@ -1,0 +1,10 @@
+.follow-button {
+  font-size: 50px;
+  display:block;
+  color: #34DE04;
+  border: 3px solid #C33BD6;
+  text-align: center;
+  font-family: 'Harlow Solid Italic', sans-serif;
+  background-color: #1E0045;
+  margin-bottom: 10px;
+}
