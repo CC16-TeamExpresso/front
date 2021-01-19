@@ -62,7 +62,7 @@ export default function Profile(props:any) {
 
 	return (
 		<div className='App'>
-			    <button onClick={() => history.goBack()}>Go Back</button>		
+			    <button className='goback-button' onClick={() => history.goBack()}>Go Back</button>		
     			<h1 className='posthistory-title'>{user}'s post history</h1>
 				<div className='history-feed'>
 				{feedUsers.map((feedUser:any) => {

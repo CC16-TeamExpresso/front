@@ -179,199 +179,19 @@
     }
 }
 
-@media screen and (max-width: 500px) {
 
 
-.profile-name {
-    margin-left: 15px;
-    margin-bottom: 5px;
-    font-family:'Gotham Medium';
-    font-size:20px;
-}
-
-.post-music {
-    margin-left: 5px;
-    margin-right:5px;
-    font-family:'Gotham Medium';
-    display:block;
-}
-
-.comment-message {
-    display:inline-block;
-
-}
-
-.comment-author {
-  visibility:hidden;
-
-
-}
-
-.comment-text  {
-  
-  visibility:hidden;
-
-
-}
-.comment-author-phone {
-  display:absolute;
-
-  visibility:visible;
-  font-family:'Arial, Helvetica, sans-serif';
-  font-size:16px;
-  background-color: #1E0045;
-
-  color: #34DE04;
-
-
-}
-.comment-text-phone {
-  display:absolute;
-  visibility:visible;
-  font-family:'Arial, Helvetica, sans-serif';
-  font-size:16px;
-  background-color: #1E0045;
-
-  color: #34DE04;
-
-
-}
-.comment-message-phone{
-  display:flex;
-}
-.post-input, select, textarea {
- 
-
-    margin-top:0px;
-    background-color: #3c1b66;
-    color:#61dafb;
-    border-radius:3px;
-    height:38px;
-    width:275px;
-    padding: 10px;
-
-
-
-}
-
-.comment-send-button {
-    display:block;
-    font-size: 15px;
-    height: 30px;
-    overflow:hidden;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
-    background-color: #1E0045;
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
-    margin-right: 5px;
-
-}
-
-.comment-send-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
-}
-.display-comments-button {
-  visibility: hidden;
-
-}
-.display-comments-button-phone {
-  visibility:visible;
-  font-size: 15px;
-  height: 60px;
-  width: 95px;
-  border: 3px solid #C33BD6;
-  color:white;
-  background-color: #1E0045;
-
-  text-align: center;
-  font-family: 'Gotham Medium', sans-serif;
-}
-
-.display-comments-button-phone:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
-}
-
-
-.button-container {
-    display:flex;
-}
-
-
-
-.like-button {
-    display:block;
-    font-size: 15px;
-    height: 30px;
-    overflow:hidden;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
-
-    background-color: #1E0045;
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
-}
-
-.like-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
-}
-}
-
-@media only screen and (max-width: 600px) {
+@media(max-width: 600px) and (min-width:200px) {
   .post-box {
-    margin-left: 5px;
+    margin-left: 7%;
     display:block;
-    width:300px;
+    width:210px;
     height: 250px;
   }
 .post-input{
-  margin-top: 0px;;
+  margin-top: 0px;
   display:flex;
-  width:250px;
+  width:180px;
 }
 .display-comments-button {
   display:none;
@@ -381,10 +201,10 @@
 }
 .display-comments-button-phone{
   display:block;
-  font-size: 15px;
+  font-size: 10px;
   margin-left: 5px;
   height: 50px;
-  width: 100px;
+  width: 70px;
   border: 3px solid #C33BD6;
   color:white;
   background-color: #1E0045;
@@ -392,21 +212,29 @@
   text-align: center;
   font-family: 'Gotham Medium', sans-serif;
 }
+.like-button{
+  font-size: 10px;;
+}
+.comment-send-button {
+  font-size:10px;
+}
 .comment-container {
   margin-bottom: 10px;
 }
 .comment-author{
   position:relative;
+  font-size: 10px;
   margin-top: 0px;
-  width:150px;
-  left:170%;
+  width:70px;
+  left:165%;
   top:-250px;
   
 }
 .comment-text{
+  font-size: 10px;
   position:relative;
-  width:150px;
-  left:170%;
+  width:100px;
+  left:160%;
   top:-250px;
   margin-bottom: 0px;
 
