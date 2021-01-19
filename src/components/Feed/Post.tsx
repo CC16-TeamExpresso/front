@@ -151,7 +151,11 @@ function Post(props: any) {
 	return (
 		<div className="post-box">
 			<div>
-				<div className="profile-name"><Link to={`/user/${props.userid}`}>{props.username}</Link></div>
+				{props.isHistory ? (
+					<div><br/></div>
+				) : (
+					<div className="profile-name"><Link to={`/user/${props.userid}`}>{props.username}</Link></div>
+				)}
 				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
