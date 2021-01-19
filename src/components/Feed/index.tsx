@@ -104,8 +104,8 @@ function Feed() {
             {showMenu ?(
             <div className="dropdown-content">
     		<Link className="profile-link-phone" to="/Profile">Profile</Link>
-        <button className='update-location-button-phone' onClick={updateLocation}>Update location</button>
-        <button className='filter-button-phone'onClick={filterUsers}>filter</button>
+        <button className='update-location-button-phone' onClick={updateLocation}>Refresh</button>
+        <button className='filter-button-phone'onClick={filterUsers}>range</button>
         <input className='update-location-input-phone'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
 
           </div>):<div className='nothing'></div>}
