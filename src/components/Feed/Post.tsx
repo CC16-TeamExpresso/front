@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './Post.css';
 require('dotenv').config();
 let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8050';
@@ -151,7 +151,7 @@ function Post(props: any) {
 	return (
 		<div className="post-box">
 			<div>
-				<div className="profile-name">{props.username}</div>
+				<div className="profile-name"><Link to={`/user/${props.userid}`}>{props.username}</Link></div>
 				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
