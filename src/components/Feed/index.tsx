@@ -18,6 +18,10 @@ function Feed() {
   const [feedUsers, setFeedUsers] = useState([]);
   const [distance, setDistance] = useState(0);
   const inputDistanceArea: any = document.getElementById("inputDistance");
+  const [showMenu, setShowMenu] = useState(false)
+
+
+
   const success = (pos: any) => {
     console.log("success");
     const lat = pos.coords.latitude;
@@ -86,8 +90,30 @@ function Feed() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success, fail);
   },[])
+
+ const handleMenu = () => {
+    setShowMenu(!showMenu)
+  } 
+
+
   return (
     <div className="App">
+
+      <div onClick={handleMenu} className="dropdown">
+            <span>Menu</span>
+            {showMenu ?(
+            <div className="dropdown-content">
+    		<Link className="profile-link-phone" to="/Profile">Profile</Link>
+        <button className='update-location-button-phone' onClick={updateLocation}>Update location</button>
+        <button className='filter-button-phone'onClick={filterUsers}>filter</button>
+        <input className='update-location-input-phone'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
+
+          </div>):<div className='nothing'></div>}
+    </div>
+
+      <div>
+
+            </div>
       <div className='profile-wrapper'>
       <div className='update-location-container'>
         <button className='update-location-button' onClick={updateLocation}>Update location</button>
