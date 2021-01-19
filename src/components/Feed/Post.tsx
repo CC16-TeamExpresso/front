@@ -196,8 +196,13 @@ function Post(props: any) {
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">display comments</button>
+
+			<div>
+				{!props.isHistory ? (
+
 				<div>
 					{showComment? (
+						
 						<p>
 							{' '}
 							{chatMessages.map((message, index) => {
@@ -213,6 +218,25 @@ function Post(props: any) {
 						<p></p>
 					)}
 				</div>
+				):(<div>
+					{showComment? (
+						
+						<p>
+							{' '}
+							{chatMessages.map((message, index) => {
+								return (
+									<div className='comment-container-history'key={index}>
+										<div className="comment-author-history">{message.user}</div>
+										<div className="comment-text-history">{message.message}</div>
+									</div>
+								);
+							})}
+						</p>
+					) : (
+						<p></p>
+					)}
+				</div>)}
+			</div>
 			</div>
 		</div>
 	);
