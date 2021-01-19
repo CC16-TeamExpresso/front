@@ -109,10 +109,10 @@ function Feed() {
         <input className='update-location-input-phone'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
 
           </div>):<div className='nothing'></div>}
-    </div>
-
+          
       <div>
 
+            </div>
             </div>
       <div className='profile-wrapper'>
       <div className='update-location-container'>
