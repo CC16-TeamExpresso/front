@@ -9,7 +9,7 @@
     display:flex;
     height:120px;
     width: 850px;
-    margin:20%;
+    margin:10%;
     margin-top:5%;
     margin-bottom: 5%;
     border: 3px solid #61dafb;
@@ -240,4 +240,41 @@
 
 
 }
+.comment-container-history {
+
+}
+.comment-text-history {
+  font-family:'Arial, Helvetica, sans-serif';
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+  background-color: #3c1b66;
+  margin-left:10px;
+  margin-right:10px;
+  color:white;
+  z-index: 10;
+  font-size: 10px;
+  position:relative;
+  width:100px;
+  left:160%;
+  top:-200px;
+  margin-bottom: 0px;
+}
+.comment-author-history {    font-family:'Gotham Medium';
+  background-color: #1E0045;
+  border:2px solid #C33BD6;
+  border-radius: 5px;;
+  color: #34DE04;
+  text-align: center;
+
+  z-index: 10;
+  position:relative;
+  font-size: 10px;
+  margin-top: 0px;
+  width:70px;
+  left:165%;
+  top:-200px;
+}
+
+
 }
