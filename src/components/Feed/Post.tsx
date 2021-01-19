@@ -106,12 +106,12 @@ function Post(props: any) {
 			{ once: true }
 		); //when the user opens the comments its starts with no comments
 
-		ws.addEventListener('error', () => {
-			//handle the error if the person isnt logged or has no token
-			//you can check this by clering local storage after login and you will get this alert
-			alert('you are not logged in, log in first to comment');
-			history.replace('/login');
-		});
+		// ws.addEventListener('error', () => {
+		// 	//handle the error if the person isnt logged or has no token
+		// 	//you can check this by clering local storage after login and you will get this alert
+		// 	alert('you are not logged in, log in first to comment');
+		// 	history.replace('/login');
+		// });
 
 		ws.addEventListener('message', (event) => {
 			//getting message from the server
@@ -205,22 +205,45 @@ function Post(props: any) {
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
 				<button className="display-comments-button">display comments</button>
+
 				<div>
-					{showComment ? (
-						<p>
-							{' '}
-							{chatMessages.map((message, index) => {
-								//index is the key
-								return (
-									<div className="comment-container" key={index}>
-										<div className="comment-author">{message.user}</div>
-										<div className="comment-text">{message.message}</div>
-									</div>
-								);
-							})}
-						</p>
+					{!props.isHistory ? (
+						<div>
+							{showComment ? (
+								<p>
+									{' '}
+									{chatMessages.map((message, index) => {
+										//index is the key
+										return (
+											<div className="comment-container" key={index}>
+												<div className="comment-author">{message.user}</div>
+												<div className="comment-text">{message.message}</div>
+											</div>
+										);
+									})}
+								</p>
+							) : (
+								<p></p>
+							)}
+						</div>
 					) : (
-						<p></p>
+						<div>
+							{showComment ? (
+								<p>
+									{' '}
+									{chatMessages.map((message, index) => {
+										return (
+											<div className="comment-container-history" key={index}>
+												<div className="comment-author-history">{message.user}</div>
+												<div className="comment-text-history">{message.message}</div>
+											</div>
+										);
+									})}
+								</p>
+							) : (
+								<p></p>
+							)}
+						</div>
 					)}
 				</div>
 			</div>
