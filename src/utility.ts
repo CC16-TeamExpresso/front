@@ -2,7 +2,7 @@
 require('dotenv').config();
 
 
-export const IS_DEVELOPMENT = window.location.hostname === 'localhost';
+export const IS_DEVELOPMENT = window.location.hostname === 'localhost';  //if you write on terminal : location.hostname you get localhost
 export const IS_PRODUCTION = !IS_DEVELOPMENT;
 
 const API_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
