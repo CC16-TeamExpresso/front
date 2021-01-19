@@ -183,7 +183,7 @@
 
 @media(max-width: 600px) and (min-width:200px) {
   .post-box {
-    margin-left: 5px;
+    margin-left: 7%;
     display:block;
     width:210px;
     height: 250px;
