@@ -99,8 +99,8 @@ function Feed() {
   return (
     <div className="App">
 
-      <div onClick={handleMenu} className="dropdown">
-            <span>Menu</span>
+      <div  className="dropdown">
+            <span onClick={handleMenu}>Menu</span>
             {showMenu ?(
             <div className="dropdown-content">
     		<Link className="profile-link-phone" to="/Profile">Profile</Link>
@@ -116,8 +116,8 @@ function Feed() {
             </div>
       <div className='profile-wrapper'>
       <div className='update-location-container'>
-        <button className='update-location-button' onClick={updateLocation}>Update location</button>
-        <button className='filter-button'onClick={filterUsers}>filter</button>
+        <button className='update-location-button' onClick={updateLocation}>Refresh</button>
+        <button className='filter-button'onClick={filterUsers}>range</button>
         <input className='update-location-input'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
 
       </div>
