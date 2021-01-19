@@ -2,19 +2,12 @@
     font-family:'Gotham Medium';
     src:url(../../fonts/Gotham\ Bold\ Regular.ttf)
   }
-  .display-comments-button-phone{
-    visibility:hidden;
-  }
-  .comment-author-phone {
-    visibility:hidden;
-  }
-  .comment-text-phone {
-    visibility:hidden;
-  }
-
+.display-comments-button-phone {
+  display:none;
+}
 .post-box {
     display:flex;
-    height:20%;
+    height:120px;
     width: 850px;
     margin:20%;
     margin-top:5%;
@@ -365,5 +358,58 @@
     100% {
       text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
     }
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .post-box {
+    margin-left: 5px;
+    display:block;
+    width:300px;
+    height: 250px;
+  }
+.post-input{
+  margin-top: 0px;;
+  display:flex;
+  width:250px;
+}
+.display-comments-button {
+  display:none;
+}
+.button-container {
+  display:flex;
+}
+.display-comments-button-phone{
+  display:block;
+  font-size: 15px;
+  margin-left: 5px;
+  height: 50px;
+  width: 100px;
+  border: 3px solid #C33BD6;
+  color:white;
+  background-color: #1E0045;
+  
+  text-align: center;
+  font-family: 'Gotham Medium', sans-serif;
+}
+.comment-container {
+  margin-bottom: 10px;
+}
+.comment-author{
+  position:relative;
+  margin-top: 0px;
+  width:150px;
+  left:170%;
+  top:-250px;
+  
+}
+.comment-text{
+  position:relative;
+  width:150px;
+  left:170%;
+  top:-250px;
+  margin-bottom: 0px;
+
+
 }
 }

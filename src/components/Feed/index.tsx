@@ -49,7 +49,6 @@ function Feed() {
       .then(res => res.json())
       .then(data => {
         setFeedUsers(data.result);
-        console.log(data);
       });
   }
   const fail = () => {
@@ -65,6 +64,7 @@ function Feed() {
     setDistance(Number(e.target.value));
   }
 
+  
   const filterUsers = () => {
     if (isNaN(distance)) {
       alert("please input integer");
@@ -79,7 +79,6 @@ function Feed() {
         .then(res => res.json())
         .then(data => {
           setFeedUsers(data.result);
-          console.log(data);
         })
     }
   }
@@ -106,7 +105,7 @@ function Feed() {
 
       <div className='feed' >
         {feedUsers.map((feedUser : any) => {
-          return <Post username={feedUser.username} uri={feedUser.post.uri} id={feedUser.post._id}/>
+          return <Post username={feedUser.username} uri={feedUser.post.uri} id={feedUser.post._id} like={feedUser.post.like}/>
         }) }
       </div>
       

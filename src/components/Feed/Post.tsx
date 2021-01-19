@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Post.css';
 require('dotenv').config();
-
+let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8050';
 const WEBSOCKET_PATH = process.env.REACT_APP_WEBSOCKET_URL || 'ws://localhost:1338';
 
 type Message = {
@@ -27,10 +27,48 @@ function Post(props: any) {
 	const [chatMessage, setChatMessage] = useState('');
 	const [chatMessages, setChatMessages] = useState<Message[]>([]);
 	const [wsRef, setWSRef] = useState<null | WebSocket>(null);
-	const [commentLikes, setCommentLikes] = useState(0);
+	const [commentLikes, setCommentLikes] = useState(props.like);
+	const [isLike, setIsLike] = useState(false);
 
-	function increaseLikes() {
-		setCommentLikes(commentLikes + 1);
+	function increaseLikes(id: any) {
+		const postId = id;
+		// const updateLikes=()=>{
+		//     setCommentLikes(commentLikes + 1);
+		// }
+		//updateLikes();  it will be removed after get method implement
+		fetch(BACKEND_URL + `/api/like/${postId}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json',
+				token: localStorage.getItem('token') || '',
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data.like);
+				setCommentLikes(data.like);
+				//  updateLikes();  //after get method implement
+			});
+	}
+	function decreaseLikes(id: any) {
+		const postId = id;
+		// const updateLikes=()=>{
+		//     setCommentLikes(commentLikes - 1);
+		// }
+		//updateLikes();  it will be removed after get method implement
+		fetch(BACKEND_URL + `/api/dislike/${postId}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json',
+				token: localStorage.getItem('token') || '',
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data.like);
+				setCommentLikes(data.like);
+				//  updateLikes();  //after get method implement
+			});
 	}
 
 	const history = useHistory();
@@ -143,11 +181,26 @@ function Post(props: any) {
 					) : (
 						<p></p>
 					)}
-					<button className="like-button" onClick={increaseLikes}>
+					<button
+						className="like-button"
+						onClick={() => {
+							if (isLike === false) {
+								increaseLikes(props.id);
+								setIsLike(!isLike);
+							} else {
+								decreaseLikes(props.id);
+								setIsLike(!isLike);
+							}
+						}}
+					>
 						likes {commentLikes}
 					</button>
 
-					<div></div>
+					<div>
+						<button className="display-comments-button-phone" onClick={handleShowComments}>
+							display comments
+						</button>
+					</div>
 				</div>
 			</div>
 			<div className="comment-message" onClick={handleShowComments}>
@@ -159,7 +212,7 @@ function Post(props: any) {
 							{chatMessages.map((message, index) => {
 								//index is the key
 								return (
-									<div key={index}>
+									<div className="comment-container" key={index}>
 										<div className="comment-author">{message.user}</div>
 										<div className="comment-text">{message.message}</div>
 									</div>

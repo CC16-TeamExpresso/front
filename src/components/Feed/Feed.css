@@ -2,7 +2,7 @@
     border: 5px solid #C33BD6;
 
     width: 90%;
-    height:600px;
+    height:500px;
     overflow: auto;
 
 }
@@ -16,7 +16,6 @@
       color:#34de04;
       width:200px;
       font-size: 50px;
-      border: 3px solid #C33BD6;
       opacity: 1;
       animation: flicker 5s linear  reverse infinite;
   }
@@ -116,4 +115,42 @@
     .update-location-container {
         left:5%;
         position:fixed;
+    }
+
+    @media only screen and (max-width: 600px) {
+    
+      .update-location-button{
+        padding:3px;
+        font-size: 20px;
+        height: 50px;
+        width: 100%;
+    }
+    .update-location-input {
+
+        border-radius:3px;
+        height:16px;
+        width:60px;
+
+    }
+    .filter-button{
+        font-size: 15px;
+        height: 30px;
+        width: 50px;
+   
+    }
+    .update-location-container {
+        left:5%;
+        position:fixed;
+    }
+
+    .profile-link {
+      position:fixed;
+      right:5%;
+        text-align: center;
+        color:#34de04;
+        width:100px;
+        font-size: 40px;
+        opacity: 1;
+        animation: flicker 5s linear  reverse infinite;
+    }
     }
