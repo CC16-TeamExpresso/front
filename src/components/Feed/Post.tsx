@@ -144,9 +144,7 @@ function Post(props: any) {
 		};
 	}, []);
 
-	function handleShowComments() {
-		setShowComment(!showComment);
-	}
+
 
 	return (
 		<div className="post-box">
@@ -159,7 +157,7 @@ function Post(props: any) {
 				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
-						width="380"
+						width="350"
 						height="80"
 						frameBorder="0"
 						allowTransparency={true}
