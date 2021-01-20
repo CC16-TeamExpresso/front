@@ -49,6 +49,17 @@
   animation: title 1s ease-in-out infinite alternate;
 }
 
+.toastify-css {
+  background: rgb(195,59,214,0.5);
+  color: white !important;
+  font-weight: bold;
+}
+
+.toaster-container {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 @keyframes title {
   0% {
     color: rgb(90, 73, 99);
