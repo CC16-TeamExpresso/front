@@ -16,10 +16,78 @@
 }
 
 .profile-name {
-    margin-left: 15px;
+    margin-left: 5px;
     margin-bottom: 5px;
     font-family:'Gotham Medium';
     font-size:20px;
+}
+.profile-name:link {
+  font-family: "Gotham Medium";
+  color: #C33BD6;
+  text-decoration: none;
+}
+.profile-name:visited {
+  color: #C33BD6;
+
+  text-decoration: none;
+}
+.profile-name:hover {
+  opacity: 1;
+  animation: flicker 5s linear  reverse infinite;
+  }
+  .profile-name::after {
+  content: '';
+  width: 50%;
+
+  }
+  
+  
+  
+  
+  
+  @keyframes flicker {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .post-music {
@@ -238,9 +306,12 @@
   font-family: 'Gotham Medium', sans-serif;
 }
 .like-button{
-  font-size: 10px;;
+  font-size: 10px;
+  width:50px;
 }
 .comment-send-button {
+
+  width:70px;
   font-size:10px;
 }
 .comment-container {
@@ -300,4 +371,16 @@
 }
 
 
+}
+@media(max-width: 1000px)  {
+  .post-box{
+    margin-left: 2%;;
+  }
+  .post-input {
+    width:200px;
+  }
+  .display-comments-button {
+    position:absolute;
+    left:440px;
+  }
 }

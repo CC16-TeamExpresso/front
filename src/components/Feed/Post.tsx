@@ -154,7 +154,7 @@ function Post(props: any) {
 				{props.isHistory ? (
 					<div><br/></div>
 				) : (
-					<div className="profile-name"><Link to={`/user/${props.userid}`}>{props.username}</Link></div>
+					<div className="profile-name"><Link className="profile-name" to={`/user/${props.userid}`}>{props.username}</Link></div>
 				)}
 				<div>
 					<iframe
