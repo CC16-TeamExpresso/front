@@ -20,7 +20,7 @@ export default function Register() {
 			const lng = pos.coords.longitude;
 			const res = await apiCall('/register', { email, password, username, lat, lng });
 			if (res.status ==='ok'){
-				alert("User registered successfully")
+				// alert("User registered successfully")
 				history.push('/login');
 			} else {
 				alert(res.error)
