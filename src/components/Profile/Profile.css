@@ -2,7 +2,7 @@
     border: 5px solid #C33BD6;
     border-left:none;
     border-right:none;
-    width: 90%;
+    width: 100%;
     height:600px;
     overflow: auto;
 
@@ -18,4 +18,7 @@
     text-align: center;
     font-family: 'Harlow Solid Italic', sans-serif;
     background-color: #1E0045;
+}
+.like-button {
+    font-size:500px;
 }

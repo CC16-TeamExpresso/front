@@ -7,14 +7,14 @@
 .comment-container {
   display:inline-block;
   height: 100%;
-  width:420px;
+  width:380px;
 }
 .post-box {
     display:inline-block;
     width: 20%;
     margin:40%;
     margin-top:5px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 .profile-name {
@@ -105,7 +105,7 @@
 .comment-author {
     font-family:'Gotham Medium';
     
-    width:;
+    width:25%;
     margin-top: 5px;
     font-size:16px;
     background-color: #1E0045;
@@ -162,7 +162,7 @@
     color:#61dafb;
     border-radius:3px;
     height:38px;
-    width:400px;
+    width:360px;
     padding: 10px;
 
 
@@ -180,7 +180,7 @@
     background-color: #1E0045;
     text-align: center;
     font-family: 'Gotham Medium', sans-serif;
-    margin-left: 50%;
+    margin-left: 40%;
     margin-right: 5px;
 
 }
