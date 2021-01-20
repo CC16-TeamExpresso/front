@@ -1,6 +1,7 @@
 .history-feed {
     border: 5px solid #C33BD6;
-
+    border-left:none;
+    border-right:none;
     width: 90%;
     height:600px;
     overflow: auto;

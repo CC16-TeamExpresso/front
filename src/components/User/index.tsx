@@ -8,7 +8,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 export default function User(props: any) {
   const [user, setUser] = useState("");
   const [feedUsers, setFeedUsers] = useState([]);
-  const [follow,setFollow] = useState("Follow");
+  const [follow,setFollow] = useState("Peek");
   const [isFollow, setIsFollow] = useState(true);
   const { params } = props.match;
   const userid = params.userid;
@@ -26,7 +26,7 @@ export default function User(props: any) {
         setUser(data.result.username);
         setFeedUsers(data.result.posts.reverse());
         if (data.result.follow) {
-          setFollow("Following");
+          setFollow("Peeking");
         } else {
           setIsFollow(false);
         }
@@ -48,7 +48,7 @@ export default function User(props: any) {
         .then(data => {
           if(data.status === "ok") {
             setIsFollow(true);
-            setFollow("Following");
+            setFollow("Peeking");
           } else {
             alert('Something wrong. Please try again.');
           }
@@ -57,9 +57,11 @@ export default function User(props: any) {
   }
   return (
 		<div className='App'>
-      <button className='goback-button' onClick={() => history.goBack()}>Go Back</button>		
-      <h1 className='posthistory-title'>{user}'s post history</h1>
-      <button className='follow-button' onClick={followUser}>{follow}</button>
+      <h1 className='posthistory-title'>Currently Peeking on {user}</h1>
+      <div className='user-button'>
+        <button className='follow-button' onClick={followUser}>{follow}</button>
+        <button className='goback-button' onClick={() => history.goBack()}>Go Back</button>		
+      </div>
       <div className='history-feed'>
         {feedUsers.map((feedUser:any) => {
           return <Post isHistory={true} username={user} uri={feedUser.uri} id={feedUser._id} like={feedUser.like} />

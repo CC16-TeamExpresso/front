@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import Post from '../Feed/Post';
 import { useHistory } from 'react-router-dom';
+import logo from '../images/logo.png';
 
+declare module '*.png';
 let BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:8050"
 
 
@@ -63,6 +65,7 @@ export default function Profile(props:any) {
 	return (
 		<div className='App'>
 			    <button className='goback-button' onClick={() => history.goBack()}>Go Back</button>		
+      <img className="logo" src={logo} alt='logo'></img>
     			<h1 className='posthistory-title'>{user}'s post history</h1>
 				<div className='history-feed'>
 				{feedUsers.map((feedUser:any) => {
