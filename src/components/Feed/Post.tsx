@@ -185,7 +185,8 @@ function Post(props: any) {
 					) : (
 						<p></p>
 					)}
-					<button
+					{!props.isHistory ? (
+						<button
 						className="like-button"
 						onClick={() => {
 							if (isLike === false) {
@@ -199,6 +200,10 @@ function Post(props: any) {
 					>
 						likes {commentLikes}
 					</button>
+					) : (
+						<button
+						className="like-button">likes {commentLikes}</button>
+					)}
 
 					<div>
 						<button className="display-comments-button-phone" onClick={handleShowComments}>
