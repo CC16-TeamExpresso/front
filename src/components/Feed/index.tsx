@@ -19,8 +19,7 @@ function Feed() {
   const [distance, setDistance] = useState(0);
   const inputDistanceArea: any = document.getElementById("inputDistance");
   const [showMenu, setShowMenu] = useState(false)
-
-
+  const [data, setData] = useState([]);
 
   const success = (pos: any) => {
     console.log("success");
@@ -52,6 +51,7 @@ function Feed() {
       })
       .then(res => res.json())
       .then(data => {
+        setData(data.result);
         setFeedUsers(data.result);
       });
   }
@@ -80,6 +80,7 @@ function Feed() {
     })
      .then(res => res.json())
      .then(data => {
+       setData(data.result);
        setFeedUsers(data.result);
      })
   }
@@ -88,7 +89,7 @@ function Feed() {
     if (isNaN(distance)) {
       alert("please input integer");
     } else {
-      const users = feedUsers;
+      const users = data;
       setFeedUsers(users.filter((user: any) => user.distance <= distance));
       // fetch(`${BACKEND_URL}/api/user/filter?km=${distance}`, {
       //   method: "GET",
