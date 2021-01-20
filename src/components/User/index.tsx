@@ -24,7 +24,7 @@ export default function User(props: any) {
       .then(res => res.json())
       .then(data => {
         setUser(data.result.username);
-        setFeedUsers(data.result.posts);
+        setFeedUsers(data.result.posts.reverse());
         if (data.result.follow) {
           setFollow("Peeking");
         } else {

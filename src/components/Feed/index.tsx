@@ -60,30 +60,47 @@ function Feed() {
   }
   
   const updateLocation = () => {
-    inputDistanceArea.value = "";
-    navigator.geolocation.getCurrentPosition(success, fail);
+    // inputDistanceArea.value = "";
+    // navigator.geolocation.getCurrentPosition(success, fail);
+    //change to reload, because of websocket things
+    window.location.reload();
   }
 
   const inputDistance = (e: any) => {
     setDistance(Number(e.target.value));
   }
 
+  const showFriends = () => {
+    fetch(`${BACKEND_URL}/api/follow`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': localStorage.getItem('token') || ''
+      }
+    })
+     .then(res => res.json())
+     .then(data => {
+       setFeedUsers(data.result);
+     })
+  }
   
   const filterUsers = () => {
     if (isNaN(distance)) {
       alert("please input integer");
     } else {
-      fetch(`${BACKEND_URL}/api/user/filter?km=${distance}`, {
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-          'token': localStorage.getItem('token') || '',
-        }
-      })
-        .then(res => res.json())
-        .then(data => {
-          setFeedUsers(data.result);
-        })
+      const users = feedUsers;
+      setFeedUsers(users.filter((user: any) => user.distance <= distance));
+      // fetch(`${BACKEND_URL}/api/user/filter?km=${distance}`, {
+      //   method: "GET",
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'token': localStorage.getItem('token') || '',
+      //   }
+      // })
+      //   .then(res => res.json())
+      //   .then(data => {
+      //     setFeedUsers(data.result);
+      //   })
     }
   }
 
@@ -105,6 +122,7 @@ function Feed() {
             <div className="dropdown-content">
     		<Link className="profile-link-phone" to="/Profile">Profile</Link>
         <button className='update-location-button-phone' onClick={updateLocation}>Refresh</button>
+        <button className='update-location-button-phone' onClick={showFriends}>Show frinends</button>
         <button className='filter-button-phone'onClick={filterUsers}>range</button>
         <input className='update-location-input-phone'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
 
@@ -117,6 +135,7 @@ function Feed() {
       <div className='profile-wrapper'>
       <div className='update-location-container'>
         <button className='update-location-button' onClick={updateLocation}>Refresh</button>
+        <button className='update-location-button' onClick={showFriends}>Show friends</button>
         <button className='filter-button'onClick={filterUsers}>range</button>
         <input className='update-location-input'id="inputDistance" type="text" onChange={inputDistance} placeholder='KM Radius'/>
 
