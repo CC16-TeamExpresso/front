@@ -159,7 +159,7 @@ function Post(props: any) {
 				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
-						width="210"
+						width="420"
 						height="80"
 						frameBorder="0"
 						allowTransparency={true}
@@ -205,16 +205,21 @@ function Post(props: any) {
 						className="like-button">likes {commentLikes}</button>
 					)}
 
-					<div>
-						<button className="display-comments-button-phone" onClick={handleShowComments}>
-							display comments
-						</button>
-					</div>
 				</div>
-			</div>
-			<div className="comment-message" onClick={handleShowComments}>
-				<button className="display-comments-button">display comments</button>
-
+				<div className="comment-container">
+									{' '}
+									{chatMessages.map((message, index) => {
+										//index is the key
+										return (
+											<div  key={index}>
+												<div className="comment-author">{message.user}</div>
+												<div className="comment-text">{message.message}</div>
+											</div>
+										);
+									})}
+				</div>
+				</div>
+						
 				<div>
 					{!props.isHistory ? (
 						<div>
@@ -255,7 +260,7 @@ function Post(props: any) {
 						</div>
 					)}
 				</div>
-			</div>
+			
 		</div>
 	);
 }
