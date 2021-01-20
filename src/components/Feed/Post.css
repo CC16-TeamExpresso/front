@@ -2,20 +2,24 @@
     font-family:'Gotham Medium';
     src:url(../../fonts/Gotham\ Bold\ Regular.ttf)
   }
-.display-comments-button-phone {
-  display:none;
+
+
+.comment-container {
+  display:inline-block;
+  height: 100%;
+  width:420px;
 }
 .post-box {
-    display:flex;
-    height:120px;
-    width: 60%;
-    margin:20%;
-    margin-top:5%;
+    display:inline-block;
+    width: 20%;
+    margin:40%;
+    margin-top:5px;
     margin-bottom: 5%;
-    border: 3px solid #61dafb;
 }
 
 .profile-name {
+  margin-top:5px;
+
     margin-left: 5px;
     margin-bottom: 5px;
     font-family:'Gotham Medium';
@@ -97,13 +101,12 @@
     display:block;
 }
 
-.comment-message {
-    display:flex;
-
-}
 
 .comment-author {
     font-family:'Gotham Medium';
+    
+    width:;
+    margin-top: 5px;
     font-size:16px;
     background-color: #1E0045;
     border:2px solid #C33BD6;
@@ -154,7 +157,7 @@
 }
 
 .post-input, select, textarea {
-    margin-top: 27px;
+    margin-top: 5px;
     background-color: #3c1b66;
     color:#61dafb;
     border-radius:3px;
@@ -177,6 +180,7 @@
     background-color: #1E0045;
     text-align: center;
     font-family: 'Gotham Medium', sans-serif;
+    margin-left: 50%;
     margin-right: 5px;
 
 }
@@ -198,44 +202,15 @@
       text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
     }
 }
-.display-comments-button {
-    margin-top: 27px;;
-    font-size: 15px;
-    height: 60px;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
-    background-color: #1E0045;
-    
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
-}
-.display-comments-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
-}
+
 .comment-section {
     z-index: 10;
-    width:300px;
     border: 3px solid #34DE04;
 }
 
 .button-container {
     display:flex;
-    width:300px;
+    width:420px;
 }
 
 
@@ -275,112 +250,20 @@
 
 
 @media(max-width: 600px) and (min-width:200px) {
-  .post-box {
-    margin-left: 7%;
-    display:block;
-    width:210px;
-    height: 250px;
-  }
-.post-input{
-  margin-top: 0px;
-  display:flex;
-  width:180px;
-}
-.display-comments-button {
-  display:none;
-}
-.button-container {
-  display:flex;
-}
-.display-comments-button-phone{
-  display:block;
-  font-size: 10px;
-  margin-left: 5px;
-  height: 50px;
-  width: 70px;
-  border: 3px solid #C33BD6;
-  color:white;
-  background-color: #1E0045;
-  
-  text-align: center;
-  font-family: 'Gotham Medium', sans-serif;
-}
-.like-button{
-  font-size: 10px;
-  width:50px;
-}
-.comment-send-button {
 
-  width:70px;
-  font-size:10px;
+.post-box{
+  margin-left: 5px;;
 }
-.comment-container {
-  margin-bottom: 10px;
-}
-.comment-author{
-  position:relative;
-  font-size: 10px;
-  margin-top: 0px;
-  width:70px;
-  left:165%;
-  top:-250px;
-  
-}
-.comment-text{
-  font-size: 10px;
-  position:relative;
-  width:100px;
-  left:160%;
-  top:-250px;
-  margin-bottom: 0px;
 
 
-}
 
-.comment-text-history {
-  font-family:'Arial, Helvetica, sans-serif';
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 10px;
-  background-color: #3c1b66;
-  margin-left:10px;
-  margin-right:10px;
-  color:white;
-  z-index: 10;
-  font-size: 10px;
-  position:relative;
-  width:100px;
-  left:160%;
-  top:-200px;
-  margin-bottom: 0px;
-}
-.comment-author-history {    font-family:'Gotham Medium';
-  background-color: #1E0045;
-  border:2px solid #C33BD6;
-  border-radius: 5px;;
-  color: #34DE04;
-  text-align: center;
 
-  z-index: 10;
-  position:relative;
-  font-size: 10px;
-  margin-top: 0px;
-  width:70px;
-  left:165%;
-  top:-200px;
-}
+
+
+
 
 
 }
 @media(max-width: 1000px)  {
-  .post-box{
-    margin-left: 2%;;
-  }
-  .post-input {
-    width:200px;
-  }
-  .display-comments-button {
-    position:absolute;
-    left:440px;
-  }
+
 }
