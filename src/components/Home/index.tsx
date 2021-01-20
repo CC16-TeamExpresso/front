@@ -60,10 +60,10 @@ export default function Home() {
 		<div className="App">
 			{installable && (
 				<button className="install-button" onClick={handleInstallClick}>
-					INSTALL ME
+					install
 				</button>
 			)}
-			<img className="logo" src={logo} alt="logo"></img>
+			<img className="logo" src={logo} alt="logo" onClick={handleInstallClick}></img>
 			<header className="App-header">
 				<h1 className="title">Peekify</h1>
 				<div>
