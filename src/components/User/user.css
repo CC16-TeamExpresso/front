@@ -8,3 +8,27 @@
   background-color: #1E0045;
   margin-bottom: 10px;
 }
+
+.user-button {
+  width:350px;
+  display:flex;;
+}
+
+.follow-button {
+  text-align: center;
+  font-size: 40px;
+  display:block;
+  color: #61dafb;
+  width:200px;
+  height:60px;
+}
+.goback-button {
+  margin-left: 10px;;
+  display:block;
+  margin-bottom: 5px;
+  width:240px;
+  height:60px;
+  font-size: 40px;
+
+
+}
