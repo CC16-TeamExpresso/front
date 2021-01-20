@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react'
+import { toast, ToastContainer, Zoom } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import './Spotify.css'
 require('dotenv').config();
 
@@ -68,7 +70,17 @@ function Spotify(){
               .then(res => res.json())
               .then(data => {
                 if(data.result === 1) {
-                  alert("Successfully posted!");
+                  toast.dark('Successfully posted!!', {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    transition: Zoom,
+                    className: "toastify-css"
+                    });
                  // enterUri.value = "";
                 }else {
                   alert("Oops something went wrong!");
@@ -81,7 +93,19 @@ function Spotify(){
             
       return (
       <div className='spotify-container'>
-
+        <ToastContainer 
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          transition={Zoom}
+          className="toaster-container"
+        />
           { accessToken === "" 
               ?
               <button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Log in with Spotify</a></button>
