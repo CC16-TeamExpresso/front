@@ -24,3 +24,16 @@
       display:relative;
       width: 200px;
   }
+  .install-button {
+    border: 3px solid #C33BD6;
+    padding-right: 10px;
+    background-color: #1E0045;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #C33BD6;
+    font-family: 'Harlow Solid Italic', sans-serif;
+    margin-bottom: 5px;;
+  }
