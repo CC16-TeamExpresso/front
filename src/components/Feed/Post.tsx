@@ -178,7 +178,9 @@ function Post(props: any) {
 				<div className="button-container">
 					{!props.isHistory ? (
 						<button className="comment-send-button" onClick={sendMessage}>
+						   <span className="comment-and-heart">
 							comment
+						   </span>
 						</button>
 					) : (
 						<p></p>
@@ -194,13 +196,18 @@ function Post(props: any) {
 								decreaseLikes(props.id);
 								setIsLike(!isLike);
 							}
-						}}
-					>
-						likes {commentLikes}
-					</button>
+						}}>
+							<span className="comment-and-heart">
+						        <i className="fas fa-heart"></i> {commentLikes}
+					        </span>
+					    </button>
 					) : (
 						<button
-						className="like-button">likes {commentLikes}</button>
+						className="like-button">
+							<span className="comment-and-heart">
+							    <i className="fas fa-heart"></i> {commentLikes}
+							</span>
+						</button>
 					)}
 
 				</div>

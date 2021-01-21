@@ -1,53 +1,57 @@
 @font-face {
-    font-family:'Gotham Medium';
-    src:url(../../fonts/Gotham\ Bold\ Regular.ttf)
-  }
-
+  font-family: "Gotham Medium";
+  src: url(../../fonts/Gotham\ Bold\ Regular.ttf);
+}
 
 .comment-container {
-  display:inline-block;
+  display: inline-block;
 }
 .post-box {
-    display:inline-block;
-    width: 320px;;
-    margin:38%;
-    margin-top:5px;
-    margin-bottom: 2%;
+  display: inline-block;
+  width: 320px;
+  margin: 38%;
+  margin-top: 5px;
+  margin-bottom: 2%;
 }
 
 .profile-name {
-  margin-top:5px;
+  margin-top: 5px;
 
-    margin-left: 5px;
-    margin-bottom: 5px;
-    font-family:'Gotham Medium';
-    font-size:20px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-family: "Gotham Medium";
+  font-size: 20px;
 }
 .profile-name:link {
   font-family: "Gotham Medium";
-  color: #C33BD6;
+  color: #c33bd6;
   text-decoration: none;
 }
 .profile-name:visited {
-  color: #C33BD6;
+  color: #c33bd6;
 
   text-decoration: none;
 }
 .profile-name:hover {
-  opacity: 1; 
-  animation: flicker 5s linear  reverse infinite;
-  }
-  .profile-name::after {
-  content: '';
+  opacity: 1;
+  animation: flicker 5s linear reverse infinite;
+}
+.profile-name::after {
+  content: "";
   width: 50%;
+}
 
-  }
-  
-  
-  
-  
-  
-  @keyframes flicker {
+.comment-and-heart {
+  color: #61dafb;
+  /* color: white; */
+}
+.comment-and-heart:hover {
+  text-align: center;
+  -webkit-animation: title 1s ease-in-out infinite alternate;
+  -moz-animation: title 1s ease-in-out infinite alternate;
+  animation: title 1s ease-in-out infinite alternate;
+}
+@keyframes flicker {
   0% {
     opacity: 0.4;
   }
@@ -93,165 +97,149 @@
 }
 
 .post-music {
-    margin-left: 5px;
-    margin-right:5px;
-    font-family:'Gotham Medium';
-    display:block;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: "Gotham Medium";
+  display: block;
 }
 
-
 .comment-author {
-    font-family:'Gotham Medium';
-    
-    width:25%;
-    margin-top: 5px;
-    font-size:16px;
-    background-color: #1E0045;
-    border:2px solid #C33BD6;
-    border-radius: 5px;;
-    color: #34DE04;
-    text-align: center;
-
-
+  font-family: "Gotham Medium";
+  width: 25%;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: #1e0045;
+  border: 2px solid #c33bd6;
+  border-radius: 5px;
+  color: #34de04;
+  text-align: center;
 }
 
 .comment-text {
-    font-family:'Arial, Helvetica, sans-serif';
-    width:100%;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
-    background-color: #3c1b66;
-    margin-left:10px;
-    margin-right:10px;
-    color:white;
-    font-size:16px;
-
+  font-family: "Arial", "Helvetica", sans-serif;
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 10px;
+  background-color: #3c1b66;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.07em;
 }
 .comment-author-history {
-  font-family:'Gotham Medium';
-  font-size:20px;
-  background-color: #1E0045;
-  border:2px solid #C33BD6;
-  border-radius: 5px;;
-  color: #34DE04;
+  font-family: "Gotham Medium";
+  font-size: 20px;
+  background-color: #1e0045;
+  border: 2px solid #c33bd6;
+  border-radius: 5px;
+  color: #34de04;
   text-align: center;
 
   z-index: 10;
-
 }
 
 .comment-text-history {
-  font-family:'Arial, Helvetica, sans-serif';
+  font-family: "Arial", "Helvetica", sans-serif;
   padding-left: 5px;
   padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   border-radius: 10px;
   background-color: #3c1b66;
-  margin-left:10px;
-  margin-right:10px;
-  color:white;
-  font-size:16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  font-size: 14px;
   z-index: 10;
-
+  letter-spacing: 0.07em;
 }
 
-.post-input, select, textarea {
-    margin-top: 5px;
-    background-color: #3c1b66;
-    color:#61dafb;
-    border-radius:3px;
-    height:38px;
-    width:330px;
-    padding: 10px;
-
-
-
+.post-input,
+select,
+textarea {
+  margin-top: 5px;
+  background-color: #3c1b66;
+  color: #61dafb;
+  border-radius: 3px;
+  height: 38px;
+  width: 330px;
+  padding: 10px;
 }
 
 .comment-send-button {
-    display:block;
-    font-size: 15px;
-    height: 30px;
-    overflow:hidden;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
-    background-color: #1E0045;
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
-    margin-left: 35%;
-    margin-right: 5px;
-
+  display: block;
+  font-size: 15px;
+  height: 30px;
+  overflow: hidden;
+  width: 100px;
+  border: 3px solid #c33bd6;
+  color: white;
+  background-color: #1e0045;
+  text-align: center;
+  font-family: "Gotham Medium", sans-serif;
+  margin-left: 35%;
+  margin-right: 5px;
 }
 
 .comment-send-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
+  text-align: center;
+  -webkit-animation: title 1s ease-in-out infinite alternate;
+  -moz-animation: title 1s ease-in-out infinite alternate;
+  animation: title 1s ease-in-out infinite alternate;
 }
 
+@keyframes title {
+  0% {
+    color: rgb(90, 73, 99);
+  }
 
+  100% {
+    text-shadow: 0 0 5px #c33bd6, 0 0 10px #c33bd6;
+  }
+}
 
 .button-container {
-    display:flex;
-    width:400px;
+  display: flex;
+  width: 400px;
 }
 
-
-
 .like-button {
-    display:block;
-    font-size: 15px;
-    height: 30px;
-    overflow:hidden;
-    width: 100px;
-    border: 3px solid #C33BD6;
-    color:white;
+  display: block;
+  font-size: 15px;
+  height: 30px;
+  overflow: hidden;
+  width: 100px;
+  border: 3px solid #c33bd6;
+  color: white;
 
-    background-color: #1E0045;
-    text-align: center;
-    font-family: 'Gotham Medium', sans-serif;
+  background-color: #1e0045;
+  text-align: center;
+  font-family: "Gotham Medium", sans-serif;
 }
 
 .like-button:hover {
-    text-align: center;
-    -webkit-animation: title 1s ease-in-out infinite alternate;
-    -moz-animation: title 1s ease-in-out infinite alternate;
-    animation: title 1s ease-in-out infinite alternate;
+  text-align: center;
+  -webkit-animation: title 1s ease-in-out infinite alternate;
+  -moz-animation: title 1s ease-in-out infinite alternate;
+  animation: title 1s ease-in-out infinite alternate;
+}
+
+@keyframes title {
+  0% {
+    color: rgb(90, 73, 99);
   }
-  
-  @keyframes title {
-    0%{
-      color: rgb(90, 73, 99);
-       
-    }
-    
-    100% {
-      text-shadow: 0 0 5px #C33BD6, 0 0 10px #C33BD6;
-    }
+
+  100% {
+    text-shadow: 0 0 5px #c33bd6, 0 0 10px #c33bd6;
+  }
 }
 
-
-
-@media(max-width: 600px) and (min-width:200px) {
-
-.post-box{
-  margin-left: 5px;;
-}
-
-
-
-
+@media (max-width: 600px) and (min-width: 200px) {
+  .post-box {
+    margin-left: 5px;
+  }
 }
