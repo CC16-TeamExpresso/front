@@ -92,6 +92,7 @@ function Spotify(){
       let spotifyLoginUrl = BACKEND_URL + "/spotifylogin"   
             
       return (
+        <div className='spotify-center'>
       <div className='spotify-container'>
         <ToastContainer 
           position="top-center"
@@ -111,21 +112,23 @@ function Spotify(){
               <button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Log in with Spotify</a></button>
               :<button className='spotify-login'id="button"><a className='spotify-link' href={spotifyLoginUrl}>Logged in</a></button>
           }
-          
-          <button className='spotify-refresh' id="fillUri" onClick={refresh}>Current Song</button>
-          <button className='spotify-share-button'id="share" onClick={sendUri}>Share</button>
+          <div className="spotify-button-container">
+            <button className='spotify-refresh' id="fillUri" onClick={refresh}>Current Song</button>
+            <button className='spotify-share-button'id="share" onClick={sendUri}>Share</button>
+          </div>
           
           { currentUri !== "" 
               ?
               <iframe
                       src={`https://open.spotify.com/embed/${currentUri.slice(8).replace(":", "/")}`}
-                      width="300"
+                      width="350"
                       height="80"
                       frameBorder="0"
                       allowTransparency={true}
                       allow="encrypted-media"
               ></iframe>
               : null}
+      </div>
       </div>
     )
 }

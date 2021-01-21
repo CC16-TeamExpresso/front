@@ -3,13 +3,11 @@
   src: url(../../fonts/Gotham\ Bold\ Regular.ttf);
 }
 
-.comment-container {
-  display: inline-block;
-}
 .post-box {
+
   display: inline-block;
-  width: 320px;
-  margin: 38%;
+  width: 300px;
+  margin-left:42%;
   margin-top: 5px;
   margin-bottom: 2%;
 }
@@ -203,8 +201,9 @@ textarea {
 }
 
 .button-container {
+  margin-left: 10%;
   display: flex;
-  width: 400px;
+  width: 300px;
 }
 
 .like-button {
@@ -238,8 +237,10 @@ textarea {
   }
 }
 
+
 @media (max-width: 600px) and (min-width: 200px) {
   .post-box {
+    width:280px;
     margin-left: 5px;
   }
 }
