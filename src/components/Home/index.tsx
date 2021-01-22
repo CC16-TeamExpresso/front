@@ -63,7 +63,7 @@ export default function Home() {
 					install
 				</button>
 			)}
-			<img className="logo" src={logo} alt="logo" onClick={handleInstallClick}></img>
+			<img className="logo" src={logo} alt="logo" ></img>
 			<header className="App-header">
 				<h1 className="title">Peekify</h1>
 				<div>

@@ -121,7 +121,7 @@ function Spotify(){
               ?
               <iframe
                       src={`https://open.spotify.com/embed/${currentUri.slice(8).replace(":", "/")}`}
-                      width="350"
+                      width="320"
                       height="80"
                       frameBorder="0"
                       allowTransparency={true}
