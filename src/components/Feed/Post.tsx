@@ -157,7 +157,7 @@ function Post(props: any) {
 				<div>
 					<iframe
 						src={`https://open.spotify.com/embed/${props.uri}`}
-						width="350"
+						width="320"
 						height="80"
 						frameBorder="0"
 						allowTransparency={true}
