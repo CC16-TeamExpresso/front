@@ -13,7 +13,62 @@
   width:350px;
   display:flex;;
 }
+.posthistory-title {
+  opacity: 1;
+  animation: flicker 2s linear  reverse infinite;
+}
 
+
+
+
+  
+  
+  
+  
+  @keyframes flicker {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+  }
 .follow-button {
   text-align: center;
   font-size: 40px;
