@@ -3,7 +3,7 @@
   src: url(../../fonts/Gotham\ Bold\ Regular.ttf);
 }
 .spotify-container {
-  width:300px;
+  width:320px;
 
 }
 
@@ -34,7 +34,7 @@
 
 
 .spotify-share-button {
-  margin-left:10px;
+  margin-left:15%;
   font-size: 20px;
   height: 30px;
   width: 45%;
