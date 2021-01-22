@@ -57,7 +57,7 @@ export default function User(props: any) {
   }
   return (
 		<div className='App'>
-      <h1 className='posthistory-title'>Currently Peeking on {user}</h1>
+      <h1 className='posthistory-title'>{user}</h1>
       <div className='user-button'>
         <button className='follow-button' onClick={followUser}>{follow}</button>
         <button className='goback-button' onClick={() => history.goBack()}>Go Back</button>		
