@@ -28,4 +28,3 @@ Peekify is available [here](https://master.d3koc4k87o35ht.amplifyapp.com/)!
 - [BackEnd repo](https://github.com/CC16-TeamExpresso/back)
 
 - [Websocket repo](https://github.com/CC16-TeamExpresso/websocket)
-
