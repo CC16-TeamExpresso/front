@@ -18,6 +18,12 @@ Peekify is available [here](https://master.d3koc4k87o35ht.amplifyapp.com/)!
 
 - [React](https://reactjs.org/)
 
+- [React-toastify](https://fkhadra.github.io/react-toastify/introduction)
+
+- [Spotify API](https://developer.spotify.com/)
+
+- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+
 - [PWA](https://web.dev/progressive-web-apps/)
 
 - [AWS](https://aws.amazon.com/amplify/?nc1=h_ls)
