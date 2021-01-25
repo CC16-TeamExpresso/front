@@ -20,7 +20,7 @@ Peekify is available [here](https://master.d3koc4k87o35ht.amplifyapp.com/)!
 
 - [PWA](https://web.dev/progressive-web-apps/)
 
-- [AWS](https://aws.amazon.com/jp/amplify/)
+- [AWS](https://aws.amazon.com/amplify/?nc1=h_ls)
 
 ## Link
 - [General repo](https://github.com/CC16-TeamExpresso/Main-App)
